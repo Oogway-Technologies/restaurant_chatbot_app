@@ -1,0 +1,9 @@
+version: "2.0"
+
+rules:
+
+- rule: Greet and prompt
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - action: utter_preference_prompt

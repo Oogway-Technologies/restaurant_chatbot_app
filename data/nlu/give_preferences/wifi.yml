@@ -1,0 +1,24 @@
+version: "2.0"
+
+nlu:
+
+# String Yelp displays for these attributes
+- intent: give_preferences
+  examples: |
+    - [Free Wi-Fi]{"entity": "wifi", "role": "free"}
+    - [Paid Wi-Fi]{"entity": "wifi", "role": "paid"}
+
+# Other examples
+- intent: give_preferences
+  examples: |
+    - [free WiFi]{"entity": "wifi", "role": "free"}
+    - [paid WiFi]{"entity": "wifi", "role": "paid"}
+    - [free wifi]{"entity": "wifi", "role": "free"}
+    - [paid wifi]{"entity": "wifi", "role": "paid"}
+
+# Not a key in the database, but probably a common case is searching for any WiFi
+- intent: give_preferences
+  examples: |
+    - [Wi-Fi]{"entity": "wifi", "role": "any"}
+    - [WiFi]{"entity": "wifi", "role": "any"}
+    - [wifi]{"entity": "wifi", "role": "any"}

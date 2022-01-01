@@ -1,0 +1,71 @@
+version: "2.0"
+
+rules:
+
+- rule: Greet and prompt
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - action: utter_preference_prompt
+
+- rule: Question-answering
+  steps:
+    - intent: qa_question
+    - action: action_qa_answer
+#    - action: action_utter_followup_filter_prompt
+
+- rule: Trigger response selector from button payload
+  steps:
+  - intent: trigger_response_selector
+  - action: action_trigger_response_selector
+
+- rule: Next preference
+  steps:
+  - intent: next_preference
+  - action: utter_next_preference
+
+- rule: Remove preference
+  steps:
+  - intent: remove_preference
+  - action: action_remove_preference
+  - action: action_utter_filtered
+
+- rule: User asks options
+  steps:
+  - intent: ask_options
+  - action: action_utter_options
+
+- rule: Feedback
+  steps:
+  - intent: feedback
+  - action: utter_thanks_for_feedback
+
+- rule: out-of-scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- rule: Thank you
+  steps:
+  - intent: thank_you
+  - action: utter_welcome
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: User alerts mistake
+  steps:
+  - intent: user_alerts_bot_mistake
+  - action: utter_apologize_for_mistake
+
+- rule: NLU fallback (low confidence); Ask rephrase
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase

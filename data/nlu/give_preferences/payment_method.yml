@@ -1,0 +1,43 @@
+version: "2.0"
+
+nlu:
+
+# Possible Yelp roles for payment_method with an exact match to the entity (replacing underscores with spaces)
+- intent: give_preferences
+  examples: |
+    - [cryptocurrency]{"entity": "payment_method", "role": "cryptocurrency"}
+    - [android pay]{"entity": "payment_method", "role": "android_pay"}
+    - [apple pay]{"entity": "payment_method", "role": "apple_pay"}
+    - [credit cards]{"entity": "payment_method", "role": "credit_cards"}
+    - [debit cards]{"entity": "payment_method", "role": "debit_cards"}
+
+# Lowercase version of the string Yelp displays for these attributes
+- intent: give_preferences
+  examples: |
+    - accepts [cryptocurrency]{"entity": "payment_method", "role": "cryptocurrency"}
+    - accepts [android pay]{"entity": "payment_method", "role": "android_pay"}
+    - accepts [apple pay]{"entity": "payment_method", "role": "apple_pay"}
+    - accepts [credit cards]{"entity": "payment_method", "role": "credit_cards"}
+    - accepts [debit cards]{"entity": "payment_method", "role": "debit_cards"}
+
+# Other examples (with and without the word "takes" before them)
+- intent: give_preferences
+  examples: |
+    - [bitcoin]{"entity": "payment_method", "role": "cryptocurrency"}
+    - [google pay]{"entity": "payment_method", "role": "android_pay"}
+    - [iphone pay]{"entity": "payment_method", "role": "apple_pay"}
+    - [credit]{"entity": "payment_method", "role": "credit_cards"}
+    - [debit]{"entity": "payment_method", "role": "debit_cards"}
+    - takes [bitcoin]{"entity": "payment_method", "role": "cryptocurrency"}
+    - takes [google pay]{"entity": "payment_method", "role": "android_pay"}
+    - takes [iphone pay]{"entity": "payment_method", "role": "apple_pay"}
+    - takes [credit]{"entity": "payment_method", "role": "credit_cards"}
+    - takes [debit]{"entity": "payment_method", "role": "debit_cards"}
+
+# AND/OR examples
+- intent: give_preferences
+  examples: |
+    - [credit]{"entity": "payment_method", "role": "credit_cards"} [and]{"entity": "payment_method", "role": "AND"} [apple pay]{"entity": "payment_method", "role": "apple_pay"}
+    - restaurant that takes [credit]{"entity": "payment_method", "role": "credit_cards"} [and]{"entity": "payment_method", "role": "AND"} [apple pay]{"entity": "payment_method", "role": "apple_pay"}
+    - [credit]{"entity": "payment_method", "role": "credit_cards"} [or]{"entity": "payment_method", "role": "OR"} [apple pay]{"entity": "payment_method", "role": "apple_pay"}
+    - restaurant that takes [credit]{"entity": "payment_method", "role": "credit_cards"} [or]{"entity": "payment_method", "role": "OR"} [apple pay]{"entity": "payment_method", "role": "apple_pay"}

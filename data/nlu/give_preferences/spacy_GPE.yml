@@ -1,0 +1,15 @@
+version: "2.0"
+
+nlu:
+
+# DIETClassifier falsely labeled GPEs as GPEs and another label, so fix those
+- intent: give_preferences
+  examples: |
+    - Boston
+    - Dallas
+    - New York
+    - Orange County
+    - San Jose
+    - Washington DC
+    - Dallas or Houston
+    - San Diego, Irvine, Anaheim, or Fresno

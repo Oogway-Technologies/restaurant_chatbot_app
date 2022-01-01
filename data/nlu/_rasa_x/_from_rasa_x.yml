@@ -1,0 +1,143 @@
+version: "2.0"
+nlu:
+- intent: remove_preference
+  examples: |
+    - remove [attire]{"entity": "filter_key", "role": "attire"}
+    - remove [noise level]{"entity": "filter_key", "role": "noise_level"} filter
+    - remove [attire]{"entity": "filter_key", "role": "attire"} filter
+    - remove [restaurant_food_type]{"entity": "filter_key", "role": "restaurant_food_type"}
+    - any [noise level]{"entity": "filter_key", "role": "noise_level"} is fine
+    - I do not need [music]{"entity": "filter_key", "role": "music"}
+    - any [cusinie]{"entity": "filter_key", "role": "cuisine"}
+    - any [ambience]{"entity": "filter_key", "role": "ambience"}
+    - no [dietary restrictions]{"entity": "filter_key", "role": "dietary_restrictions"}
+    - any [price]{"entity": "filter_key", "role": "price"} is ok
+    - remove [restaurant_type]{"entity": "filter_key", "role": "restaurant_type"}
+    - remove [restauarnt_type]{"entity": "filter_key", "role": "restaurant_type"}
+- intent: give_preferences
+  examples: |
+    - looking for a [cheap]{"entity": "price", "role": "1"} restaurant
+    - [cheap]{"entity": "price", "role": "1"} [thai]{"entity": "cuisine", "role": "Thai"}
+    - I'm looking for a [casual]{"entity": "ambience", "role": "casual"} place that serves [burgers]{"entity": "restaurant_food_type", "role": "Burgers"}
+    - some [tacos]{"entity": "restaurant_food_type", "role": "Tacos"}
+    - [cheap]{"entity": "price", "role": "1"} [tacos]{"entity": "restaurant_food_type", "role": "Tacos"} places
+    - i want [cheap]{"entity": "price", "role": "1"} [tacos]{"entity": "restaurant_food_type", "role": "Tacos"}
+    - give me [anything but]{"entity": "restaurant_food_type", "role": "NOT"} [tacos]{"entity": "restaurant_food_type", "role": "Tacos"}
+    - something [cheap]{"entity": "price", "role": "1"}
+    - give me the top-rated restaurants
+    - show me some [cheap]{"entity": "price", "role": "1"} [taco]{"entity": "restaurant_food_type", "role": "Tacos"} places
+    - well, I'd like it to be [cheap]{"entity": "price", "role": "1"}
+    - show me some [cheap]{"entity": "price", "role": "1"} [pizza]{"entity": "restaurant_food_type", "role": "Pizza"}
+    - show me some [expensive]{"entity": "price", "role": "3"} options
+    - [expensive]{"entity": "price", "role": "3"} [chiense]{"entity": "cuisine", "role": "Chinese"}
+    - Authentic [thai]{"entity": "cuisine", "role": "Thai"}
+    - i am in the mood for some [indian]{"entity": "cuisine", "role": "Indian"}
+    - i am in the mood for some [thai]{"entity": "cuisine", "role": "Thai"}
+    - sit down [bbq]{"entity": "restaurant_type", "role": "Barbeque"}
+    - [Moderate price range]{"entity": "price", "role": "2"}
+    - Actually, New York
+    - i want a [quiet]{"entity": "noise_level", "role": "quiet"} [chinese]{"entity": "cuisine", "role": "Chinese"} restaurant in southlake
+    - cambridge
+    - [not]{"entity": "restaurant_food_type", "role": "NOT"} [pizza]{"entity": "restaurant_food_type", "role": "Pizza"}
+    - keller
+    - [cheap]{"entity": "price", "role": "1"} [indian]{"entity": "cuisine", "role": "Indian"} in freemont
+    - I feel like eating [mexican]{"entity": "cuisine", "role": "Mexican"} food with good [vegetarian]{"entity": "dietary_restrictions", "role": "vegetarian_limited"} burrito
+    - [indain]{"entity": "cuisine", "role": "Indian"}
+    - [pizza]{"entity": "restaurant_food_type", "role": "Pizza"} in san francisco
+    - [classy]{"entity": "ambience", "role": "classy"} place in newton
+    - best shahi paneer near pleasanton, ca
+    - [anything but]{"entity": "restaurant_food_type", "role": "NOT"} [tacos]{"entity": "restaurant_food_type", "role": "Tacos"} near southlake
+    - [cheap]{"entity": "price", "role": "1"} restaurant with lots of parking in san francisco
+    - what can i eat that is nice and hot
+    - A [quiet]{"entity": "noise_level", "role": "quiet"} [vegetarian]{"entity": "dietary_restrictions", "role": "vegetarian_many"} [pasta]{"entity": "restaurant_type", "role": "Pasta Shops"} place in Boston
+    - I am in Montreal
+    - I have never been to NY, I'd like to find a typical restaurant
+    - [vietnamese]{"entity": "cuisine", "role": "Vietnamese"} [sub]{"entity": "restaurant_food_type", "role": "Sandwiches"}
+    - I'm looking for a restaurant that adds a dash of spice to everything, but not too much, with [plenty of vegetarian options]{"entity": "dietary_restrictions", "role": "vegetarian_many"}, but no eggs. Definitely [not]{"entity": "restaurant_food_type", "role": "NOT"} feeling up for [pizza]{"entity": "restaurant_food_type", "role": "Pizza"}, maybe nachos?
+    - [sushi]{"entity": "restaurant_type", "role": "Sushi Bars"} in Montreal
+    - What's the best [sushi]{"entity": "restaurant_type", "role": "Sushi Bars"} in New York
+    - [Sushi]{"entity": "restaurant_type", "role": "Sushi Bars"}
+    - yeah, it should be [cheap]{"entity": "price", "role": "1"}
+    - I want a [romantic]{"entity": "ambience", "role": "romantic"} dinner with my girlfriend in Oakland, she prefers [Korean]{"entity": "cuisine", "role": "Korean"} cuisine
+    - I want it to be [silend]{"entity": "noise_level", "role": "quiet"} and [japanese]{"entity": "cuisine", "role": "Japanese"}
+    - I want [honey toast](custom_filter) in dallas
+    - [rooftop](custom_filter)
+    - [fancy](custom_filter)
+    - [busy](custom_filter) on week ends
+    - howdy mate! I am looking for a [classy]{"entity": "ambience", "role": "classy"} [French]{"entity": "cuisine", "role": "French"} restaurant with [jazz music](custom_filter), very [quiet]{"entity": "noise_level", "role": "quiet"}
+    - Hi there! I am looking for very good [fish and chips](custom_filter), with [live music]{"entity": "music", "role": "live_music"} on Saturday night and a large choice of [whiskey](custom_filter)
+    - i want to eat [pizza]{"entity": "restaurant_food_type", "role": "Pizza"} in ny with an [italian]{"entity": "cuisine", "role": "Italian"} atmosphere and spend less than [20 dollars]{"entity": "price", "role": "2"}
+    - seattler
+    - [fusion](custom_filter)
+    - something [exquisite](custom_filter)
+    - [black owned]{"entity": "business_owner", "role": "black"} [fried chicken](custom_filter)
+    - [Organic](custom_filter) [vegetarian]{"entity": "dietary_restrictions", "role": "vegetarian_many"} restaurants in Boston
+    - [Organic](custom_filter) [vegetarian]{"entity": "dietary_restrictions", "role": "vegetarian_many"} restaurants in Mysore
+    - [schewan](custom_filter)
+    - may be [pricy]{"entity": "price", "role": "3"}, but I need to pay with [amex](custom_filter)
+    - [spicy](custom_filter) meals
+    - [french]{"entity": "cuisine", "role": "French"} [pastries](custom_filter)
+    - [lactose free](custom_filter)
+    - [pastry](custom_filter)
+    - [24/7](custom_filter)
+    - [Snacks](custom_filter)
+    - [chicken](custom_filter) in san mateo
+    - [date night](custom_filter) restauarnt near me
+    - nice [wine](custom_filter) and [pizza]{"entity": "restaurant_food_type", "role": "Pizza"}
+    - Nice [wine](custom_filter) and [pizza]{"entity": "restaurant_food_type", "role": "Pizza"}
+    - craving [italian]{"entity": "cuisine", "role": "Italian"} and [wine](custom_filter)
+    - [pizza]{"entity": "restaurant_food_type", "role": "Pizza"} and [wine](custom_filter)
+    - [pizza]{"entity": "restaurant_food_type", "role": "Pizza"} and [beer](custom_filter)
+    - i am in the mood for [pizza]{"entity": "restaurant_food_type", "role": "Pizza"} and [beer](custom_filter)
+    - how about some [pizza]{"entity": "restaurant_food_type", "role": "Pizza"} and [beer](custom_filter)
+    - [beer]{"entity": "restaurant_type", "role": "Beer Bar"} and [sushi](custom_filter) in boston
+    - Best [chilaquiles](custom_filter) in Dallas
+    - find a [pasta](custom_filter) place in Boston
+    - [spicy](custom_filter)
+    - What's the best [fish](custom_filter) in New York
+    - [sushi](custom_filter) boston
+    - [sushi](custom_filter) new york
+    - [Sushi](custom_filter) in new york
+    - [pasta](custom_filter)
+    - Show me [pasta](custom_filter) places in Boston
+    - Show me a [pasta](custom_filter) place in Cambdrige
+    - [bar]{"entity": "restaurant_type", "role": "Bars"} near [stanford](GPE)
+    - in san carlos
+    - in [mountain view](GPE)
+    - [tacos]{"entity": "restaurant_food_type", "role": "Tacos"} in palo alto
+    - [wine](custom_filter)
+    - [fast service](custom_filter) in southlake
+    - [pancakes](custom_filter) in southlake
+    - [Great fish](custom_filter)
+    - I like to eat [pineapple fried rice](custom_filter)
+    - [Organic](custom_filter) [vegetarian]{"entity": "dietary_restrictions", "role": "vegetarian_many"} restaurants in Seattle
+    - i want [indian]{"entity": "cuisine", "role": "Indian"} but my kid wants [mexican]{"entity": "cuisine", "role": "Mexican"}
+    - [hot](custom_filter)
+    - some [african]{"entity": "cuisine", "role": "African"}
+    - [pancakes](custom_filter)
+    - [offers delivery](custom_filter)
+    - [burgers]{"entity": "restaurant_food_type", "role": "Burgers"} with [draft beer](custom_filter)
+    - something [spicy](custom_filter)
+    - my budget is [$30]{"entity": "price", "role": "2"}
+    - any place that has some [wine](custom_filter)
+    - i want some [dosa](custom_filter)
+    - good [pastry](custom_filter)
+    - that serves [panckaes](custom_filter)
+- intent: greet
+  examples: |
+    - hi. my name is sid
+    - hu
+    - What's up
+    - Tsup
+- intent: thank_you
+  examples: |
+    - that is it! Thanks!
+- intent: ask_options
+  examples: |
+    - show me all your options
+    - how does this work
+- intent: out_of_scope/general
+  examples: |
+    - dog breeds
+    - dog breeds for kids
+    - Games

@@ -1,0 +1,116 @@
+version: "2.0"
+
+nlu:
+
+# Early bug fixes
+- intent: give_preferences
+  examples: |
+    - Do you have a [German]{"entity": "cuisine", "role": "German"} restaurant?
+    - I'd like to have [French]{"entity": "cuisine", "role": "French"} tonight
+    - I'm looking for some [middle eastern]{"entity": "cuisine", "role": "Middle Eastern"} food
+    - I'm looking for some [Middle Eastern]{"entity": "cuisine", "role": "Middle Eastern"} food.
+    - I want a nice restaurant for data night that is [italian]{"entity": "cuisine", "role": "Italian"}
+    - [expensive]{"entity": "price", "role": "3"} [French]{"entity": "cuisine", "role": "French"} cuisine
+    - [French]{"entity": "cuisine", "role": "French"}  cuisine, [moderate price]{"entity": "price", "role": "2"}
+    - [cheap]{"entity": "price", "role": "1"} [casual dress]{"entity": "attire", "role": "casual_dress"} place
+    - [expensive]{"entity": "price", "role": "3"} [thai]{"entity": "cuisine", "role": "Thai"} restaurant
+    - [cheap]{"entity": "price", "role": "1"} [casual]{"entity": "ambience", "role": "casual"} [Mexican]{"entity": "cuisine", "role": "Mexican"} place
+    - I want a [romantic]{"entity": "ambience", "role": "romantic"} restaurant with [live music]{"entity": "music", "role": "live_music"}
+    - [keto]{"entity": "dietary_restrictions", "role": "keto"} in dallas
+
+# Early bug fixes: were marked as negations that aren't negations
+- intent: give_preferences
+  examples: |
+    - Hello I'm looking for an [Italian]{"entity": "cuisine", "role": "Italian"} restaurant
+    - hey dude, can you find [mexican]{"entity": "cuisine", "role": "Mexican"}?
+    - how about a [chinese]{"entity": "cuisine", "role": "Chinese"} place
+    - I want a [thai]{"entity": "cuisine", "role": "Thai"} place that is [not noisy]{"entity": "noise_level", "role": "quiet"}
+    - [Anything but]{"entity": "restaurant_food_type", "role": "NOT"} [tacos]{"entity": "restaurant_food_type", "role": "Tacos"}. A [quiet]{"entity": "noise_level", "role": "quiet"} place could be nice
+    - [Mexican]{"entity": "cuisine", "role": "Mexican"} place in Boston
+    - [Mexican]{"entity": "cuisine", "role": "Mexican"} food in Boston
+
+# Early bug fixes: missed negations
+- intent: give_preferences
+  examples: |
+    - I want anything that is [not]{"entity": "cuisine", "role": "NOT"} [spanish]{"entity": "cuisine", "role": "Spanish"}!
+
+# AND/OR for known categories
+- intent: give_preferences
+  examples: |
+    - [Italian]{"entity": "cuisine", "role": "Italian"}, [Mexican]{"entity": "cuisine", "role": "Mexican"}, [or]{"entity": "cuisine", "role": "OR"} [Chinese]{"entity": "cuisine", "role": "Chinese"}
+    - [Chinese]{"entity": "cuisine", "role": "Chinese"} [and]{"entity": "cuisine", "role": "AND"} [Korean]{"entity": "cuisine", "role": "Korean"} food
+    - Best [Thai]{"entity": "cuisine", "role": "Thai"} [or]{"entity": "cuisine", "role": "OR"} [Mexican]{"entity": "cuisine", "role": "Mexican"} place
+    - [south Indian]{"entity": "cuisine", "role": "Indian"} restaurant with dosa and [breakfast]{"entity": "restaurant_type", "role": "Breakfast & Brunch"}
+
+# Negations
+- intent: give_preferences
+  examples: |
+    - I [don't]{"entity": "cuisine", "role": "NOT"} want [Mexican]{"entity": "cuisine", "role": "Mexican"} [or]{"entity": "cuisine", "role": "OR"} [Chinese]{"entity": "cuisine", "role": "Chinese"}
+    - I [don't]{"entity": "cuisine", "role": "NOT"} want [Mexican]{"entity": "cuisine", "role": "Mexican"} [and]{"entity": "cuisine", "role": "AND"} I don't want [Chinese]{"entity": "cuisine", "role": "Chinese"}
+    - I want something that [isn't]{"entity": "cuisine", "role": "NOT"} [Mexican]{"entity": "cuisine", "role": "Mexican"}, [Chinese]{"entity": "cuisine", "role": "Chinese"}, [Italian]{"entity": "cuisine", "role": "Italian"}, [or]{"entity": "cuisine", "role": "OR"} [Indian]{"entity": "cuisine", "role": "Indian"}.
+    - I had [Mexican]{"entity": "cuisine", "role": "Mexican"} and [Chinese]{"entity": "cuisine", "role": "Chinese"} recently, so [neither of those]{"entity": "cuisine", "role": "NOT"}.
+    - I know I [don't]{"entity": "cuisine", "role": "NOT"} want [Mexican]{"entity": "cuisine", "role": "Mexican"}. Maybe Chinese?
+    - [don't]{"entity": "cuisine", "role": "NOT"} give me anything [chinese]{"entity": "cuisine", "role": "Chinese"}
+    - [don't]{"entity": "cuisine", "role": "NOT"} tell me to go to [Italian]{"entity": "cuisine", "role": "Italian"}!
+    - [Not]{"entity": "cuisine", "role": "NOT"} [chinese]{"entity": "cuisine", "role": "Chinese"}!
+    - I [dont]{"entity": "cuisine", "role": "NOT"} like [neither]{"entity": "cuisine", "role": "NOT"} [Chinese]{"entity": "cuisine", "role": "Chinese"} nor [Italian]{"entity": "cuisine", "role": "Italian"}
+    - I [don't]{"entity": "cuisine", "role": "NOT"} want [Chinese]{"entity": "cuisine", "role": "Chinese"} "and" [Italian]{"entity": "cuisine", "role": "Italian"}
+    - [no]{"entity": "cuisine", "role": "NOT"} [Chinese]{"entity": "cuisine", "role": "Chinese"}, [no]{"entity": "cuisine", "role": "NOT"} [Italian]{"entity": "cuisine", "role": "Italian"}, everything else is fine
+    - [nothing]{"entity": "cuisine", "role": "NOT"} that is [Chinese]{"entity": "cuisine", "role": "Chinese"}, [Italian]{"entity": "cuisine", "role": "Italian"}, and maybe [Spanish]{"entity": "cuisine", "role": "Spanish"}
+    - [Chinese]{"entity": "cuisine", "role": "Chinese"}, [Italian]{"entity": "cuisine", "role": "Italian"}, and [Mexican]{"entity": "cuisine", "role": "Mexican"}, [nothing like that]{"entity": "cuisine", "role": "NOT"}
+    - something that [doesn't]{"entity": "cuisine", "role": "NOT"} taste like [Chinese]{"entity": "cuisine", "role": "Chinese"} or [Italian]{"entity": "cuisine", "role": "Italian"}
+    - I like [Italian]{"entity": "cuisine", "role": "Italian"} [but my wife doesn't]{"entity": "cuisine", "role": "NOT"} and she also [doesn't]{"entity": "cuisine", "role": "NOT"} like [Mexican]{"entity": "cuisine", "role": "Mexican"}, can you find something for us?
+    - what else do you have [besides]{"entity": "cuisine", "role": "NOT"} [Italian]{"entity": "cuisine", "role": "Italian"} and [Chinese]{"entity": "cuisine", "role": "Chinese"}?
+
+
+
+#    - a place with [burgers]{"entity": "food", "role": "Burgers"} [and]{"entity": "food", "role": "AND"} [pancakes]{"entity": "food", "role": "Pancakes"}
+#    - I want to go to a [pub](restaurant_type) that [has live music](last_custom_filters)
+#    - [Romantic](last_custom_filters), [Greek](cuisine), [wine](last_custom_filters), [dogs allowed](last_custom_filters)
+#    - [Expensive](price), [great hot dogs](last_custom_filters), [American beer](last_custom_filters), [parking](last_custom_filters)
+#    - restaurant with [pho](last_custom_filters) and [chicken satay](last_custom_filters)
+#    - [date night](last_custom_filters) restaurant with good food and [entertainment](last_custom_filters)
+#    - [non indian vegetarian](cuisine) restaurant with [spicy food](last_custom_filters).
+#    - I want to go to a [fine](restaurant_type), [not dirty](last_custom_filters) [Indian]{"entity": "cuisine", "role": "Indian"} restaurant
+
+# Old examples
+#- intent: give_preferences
+#  examples: |
+#    - Where is a place where I can have some [burgers]{"entity": "food", "role": "Burgers"} and [play table games with friends](last_custom_filters)? Best if it has a [good selection of beers](last_custom_filters).
+#    - I want [cheap](price) [Mexican]{"entity": "cuisine", "role": "Mexican"} food
+#    - [dimly lit](last_custom_filters) restaurant with [great burritos](last_custom_filters)
+#    - food that hopefully is [reasonably healthy](last_custom_filters)
+#    - Also, better if the place is [quiet](last_custom_filters)
+#    - [Quiet](last_custom_filters) [high value](last_custom_filters) place [nearby](last_custom_filters)
+#    - [Dimly lit](last_custom_filters) [Chinese](cuisine) place
+#    - [dimly lit](last_custom_filters) and [great burritos](last_custom_filters)
+#    - [good pho](last_custom_filters) and [cheap](price)
+#    - [kid friendly](last_custom_filters) restaurant with [spicy food](last_custom_filters)
+#    - [bar](restaurant_type) to [hangout with friends after dinner](last_custom_filters)
+#    - restaurant with to [best family dinner deals to go](last_custom_filters).
+#    - Show me restaurants that [serve typical food](last_custom_filters)
+#    - Give me a restaurant that [opened recently](last_custom_filters) and that has a [cuisine I've never tried before](cuisine)
+#    - I want to eat at a [quiet](last_custom_filters) place, [no music or too many people](last_custom_filters), a place for a [first date](last_custom_filters)
+#    - Find me a place [for a group of people](last_custom_filters), [not too expensive](price), [maybe tapas](cuisine), I'm [fine if we eat standing](last_custom_filters). Ideally it is [close to the "action" so we can do party after dinner](last_custom_filters).
+#    - I'm looking for a place to take my wife [for the anniversary](last_custom_filters). She likes [Italian](cuisine) but I [don't want to spend too much](price). I image the place having [low light](last_custom_filters), a [nice ambience](last_custom_filters) and some [background music, best if live](last_custom_filters).
+#    - [asian](cuisine) place that [isn't too expensive](price)
+#    - [allows dogs](last_custom_filters)
+#    - [Italien](cuisine), [parking](last_custom_filters), [cheap](price), [amazing pasta](last_custom_filters)
+#    - [Moderate](price), [valet service](last_custom_filters), [excellent spaghetti](last_custom_filters), [girls night out](last_custom_filters)
+#    - I am looking for a great [french](cuisine) cuisine restaurant that I can [bring my own wine please](last_custom_filters).
+#    - yes, I'd like something [different than usual](last_custom_filters)...let's say...[Cambodian](cuisine)?
+
+
+#    - don't show me any restaurants that serves pizza
+#    - my kids don't want Chinese and also they don't like pizza
+#    - [Asian food other than Chinese](cuisine).
+#    - I don't like chinese/pizza/tacos
+#    - I'm not sure about pizza...something else?
+#    - I want Italian but not pizza again!
+#    - no pizza, please
+#    - I do not want tacos
+#    - Anything but fast food
+#    - does not have a bar
+#    - I want burgers but it should not be too loud
+#    - I do not want buffets.
+#    - No restaurants  that allow smoking

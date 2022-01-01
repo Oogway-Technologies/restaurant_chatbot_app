@@ -1,0 +1,640 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- qa_question:
+    use_entities: true
+- give_preferences:
+    use_entities: true
+- ask_options:
+    use_entities: true
+- next_preference:
+    use_entities: true
+- remove_preference:
+    use_entities: true
+- trigger_response_selector:
+    use_entities: true
+- feedback:
+    use_entities: true
+- thank_you:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
+- out_of_scope:
+    use_entities: true
+- user_alerts_bot_mistake:
+    use_entities: true
+- users_needs_help_deciding:
+    use_entities: true
+entities:
+- retrieval_intent
+- feedback_score
+- filter_key
+- cuisine
+- restaurant_type
+- restaurant_food_type
+- price
+- payment_method
+- outdoor_seating
+- ambience
+- business_parking
+- wifi
+- noise_level
+- dietary_restrictions
+- attire
+- business_owner
+- smoking
+- music
+- GPE
+- LOC
+- zip_code
+- custom_filter
+slots:
+  custom_filter:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+  qa_loading_counter:
+    type: float
+    initial_value: 0
+  retrieval_intent:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  GPE:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  LOC:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  city_raw:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  city_class:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  city_operator:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+    values:
+    - or
+  zip_code:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  cuisine_raw:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  cuisine_class:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  cuisine_operator:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+    values:
+    - not
+    - and
+    - or
+  restaurant_type_raw:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  restaurant_type_class:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  restaurant_type_operator:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+    values:
+    - not
+    - and
+    - or
+  restaurant_food_type_raw:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  restaurant_food_type_class:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  restaurant_food_type_operator:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+    values:
+    - not
+    - and
+    - or
+  price_raw:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  price_class:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  price_operator:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+    values:
+    - or
+    - not
+  payment_method_raw:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  payment_method_class:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  payment_method_operator:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+    values:
+    - and
+    - or
+  outdoor_seating_raw:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  outdoor_seating_class:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  outdoor_seating_operator:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+    values:
+    - or
+  ambience_raw:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  ambience_class:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  ambience_operator:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+    values:
+    - and
+    - or
+  business_parking_raw:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  business_parking_class:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  business_parking_operator:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+    values:
+    - and
+    - or
+  wifi_raw:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  wifi_class:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  wifi_operator:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+    values:
+    - or
+  noise_level_raw:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  noise_level_class:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  noise_level_operator:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+    values:
+    - or
+  dietary_restrictions_raw:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  dietary_restrictions_class:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  dietary_restrictions_operator:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+    values:
+    - and
+    - or
+  attire_raw:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  attire_class:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  attire_operator:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+    values:
+    - or
+  business_owner_raw:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  business_owner_class:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  business_owner_operator:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+    values:
+    - or
+  smoking_raw:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  smoking_class:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  smoking_operator:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+    values:
+    - or
+  music_raw:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  music_class:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  music_operator:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+    values:
+    - and
+    - or
+responses:
+  utter_greet:
+  - text: Hey!
+  - text: Hi!
+  - text: Howdy, mate
+#   utter_preference_prompt:
+#   - buttons:
+#     - payload: /give_preferences{{"ambience":"romantic","music":"live_music","city":"New York"}}
+#       title: I want a romantic restaurant with live music in New York
+#     - payload: /give_preferences{{"price":"1","ambience":"casual","cuisine":"Mexican","city":"Boston"}}
+#       title: cheap casual Mexican place in Boston
+#     - payload: /give_preferences{{"restaurant_food_type":["NOT","Tacos"],"noise_level":"quiet","city":"San Francisco"}}
+#       title: Anything but tacos. A quiet place in San Francisco could be nice
+#     - payload: /give_preferences{{"cuisine":["Chinese","OR","Italian"],"city":"Dallas"}}
+#       title: I want Chinese or Italian food in Dallas
+#     - payload: /give_preferences{{"restaurant_food_type":"Pizza","city":"Irvine"}}
+#       title: pizza in Irvine
+#     text: What are you looking for in a restaurant, and in what city? Type "options" to see what information I can take into account.
+  utter_preference_prompt:
+  - text: "What are you looking for in a restaurant, and in what city? Here are some examples:\n- I want a romantic restaurant with live music in New York\n- cheap casual Mexican place in Cambridge\n\nType 'options' to see what information I can take into account."
+  utter_goodbye:
+  - text: Bye!
+  - text: Adios!
+  - text: Bye! Hope to talk to you again!
+  utter_next_preference/city:
+  - buttons:
+    - payload: /give_preferences{{"city":"Boston"}}
+      title: Boston
+    - payload: /give_preferences{{"city":"Dallas"}}
+      title: Dallas
+    - payload: /give_preferences{{"city":"New York"}}
+      title: New York
+    text: What city do you want to eat in?
+  utter_next_preference/cuisine:
+  - buttons:
+    - payload: /give_preferences{{"cuisine":"Mexican"}}
+      title: Mexican
+    - payload: /give_preferences{{"cuisine":"Chinese"}}
+      title: Chinese
+    - payload: /give_preferences{{"cuisine":"Italian"}}
+      title: Italian
+    text: What cuisine would you like?
+  utter_next_preference/restaurant_type:
+  - buttons:
+    - payload: /give_preferences{{"restaurant_type":"Breakfast & Brunch"}}
+      title: brunch
+    - payload: /give_preferences{{"restaurant_type":"Cafes"}}
+      title: cafe
+    - payload: /give_preferences{{"restaurant_type":"Fast Food"}}
+      title: fast food
+    - payload: /give_preferences{{"restaurant_type":"Bars"}}
+      title: bar
+    text: What type of restaurant are you looking for?
+  utter_next_preference/restaurant_food_type:
+  - buttons:
+    - payload: /give_preferences{{"restaurant_food_type":"Sandwiches"}}
+      title: sandwiches
+    - payload: /give_preferences{{"restaurant_food_type":"Pizza"}}
+      title: pizza
+    - payload: /give_preferences{{"restaurant_food_type":"Bubble Tea"}}
+      title: bubble tea
+    - payload: /give_preferences{{"restaurant_food_type":"Burgers"}}
+      title: burgers
+    text: What kind of food type are you looking for the restaurant to focus on?
+  utter_next_preference/price:
+  - buttons:
+    - payload: /give_preferences{{"price":"1"}}
+      title: $
+    - payload: /give_preferences{{"price":"2"}}
+      title: $$
+    - payload: /give_preferences{{"price":"3"}}
+      title: $$$
+    - payload: /give_preferences{{"price":"4"}}
+      title: $$$$
+    text: What price level do you prefer?
+  utter_next_preference/payment_method:
+  - buttons:
+    - payload: /give_preferences{{"payment_method":"credit_cards"}}
+      title: credit
+    - payload: /give_preferences{{"payment_method":"debit_cards"}}
+      title: debit
+    - payload: /give_preferences{{"payment_method":"apple_pay"}}
+      title: Apple Pay
+    - payload: /give_preferences{{"payment_method":"android_pay"}}
+      title: Android Pay
+    - payload: /give_preferences{{"payment_method":"cryptocurrency"}}
+      title: cryptocurrency
+    text: How would you like to pay?
+  utter_next_preference/outdoor_seating:
+  - buttons:
+    - payload: /give_preferences{{"outdoor_seating":"present"}}
+      title: TODO
+    - payload: /give_preferences{{"outdoor_seating":"heated"}}
+      title: TODO
+    - payload: /give_preferences{{"outdoor_seating":"covered"}}
+      title: TODO
+    text: Do you want outdoor seating?
+  utter_next_preference/ambience:
+  - buttons:
+    - payload: /give_preferences{{"ambience":"romantic"}}
+      title: romantic
+    - payload: /give_preferences{{"ambience":"casual"}}
+      title: casual
+    - payload: /give_preferences{{"ambience":"classy"}}
+      title: classy
+    text: What kind of ambience are you looking for?
+  utter_next_preference/business_parking:
+  - buttons:
+    - payload: /give_preferences{{"business_parking":"bike"}}
+      title: bike
+    - payload: /give_preferences{{"business_parking":"private_lot"}}
+      title: private lot
+    - payload: /give_preferences{{"business_parking":"garage"}}
+      title: garage
+    - payload: /give_preferences{{"business_parking":"street"}}
+      title: street
+    - payload: /give_preferences{{"business_parking":"validated"}}
+      title: validated
+    - payload: /give_preferences{{"business_parking":"valet"}}
+      title: valet
+    text: What kind of parking are you looking for?
+  utter_next_preference/wifi:
+  - buttons:
+    - payload: /give_preferences{{"wifi":"free"}}
+      title: TODO
+    - payload: /give_preferences{{"wifi":"paid"}}
+      title: TODO
+    - payload: /give_preferences{{"wifi":"either"}}
+      title: TODO
+    text: Free or paid or either?
+  utter_next_preference/noise_level:
+  - buttons:
+    - payload: /give_preferences{{"noise_level":"quiet"}}
+      title: quiet
+    - payload: /give_preferences{{"noise_level":"moderate"}}
+      title: moderate
+    - payload: /give_preferences{{"noise_level":"loud"}}
+      title: loud
+    - payload: /give_preferences{{"noise_level":"very_loud"}}
+      title: very loud
+    text: How loud do you want the restaurant to be?
+  utter_next_preference/dietary_restrictions:
+  - buttons:
+    - payload: /give_preferences{{"dietary_restrictions":"vegan"}}
+      title: vegan
+    - payload: /give_preferences{{"dietary_restrictions":"gluten_free"}}
+      title: gluten free
+    - payload: /give_preferences{{"dietary_restrictions":"kosher"}}
+      title: Kosher
+    text: What dietary restrictions?
+  utter_next_preference/attire:
+  - buttons:
+    - payload: /give_preferences{{"attire":"dressy"}}
+      title: dressy
+    - payload: /give_preferences{{"attire":"casual_dress"}}
+      title: casual dress
+    text: Dressy or casual?
+  utter_next_preference/business_owner:
+  - buttons:
+    - payload: /give_preferences{{"business_owner":"women"}}
+      title: women-owned
+    - payload: /give_preferences{{"business_owner":"black"}}
+      title: Black-owned
+    - payload: /give_preferences{{"business_owner":"latinx"}}
+      title: Hispanic-owned
+    - payload: /give_preferences{{"business_owner":"asian"}}
+      title: Asian-owned
+    - payload: /give_preferences{{"business_owner":"lgbtq"}}
+      title: LGBTQ-owned
+    text: What kind of restaurant ownership are you looking for?
+  utter_next_preference/smoking:
+  - buttons:
+    - payload: /give_preferences{{"smoking":"no_smoking"}}
+      title: TODO
+    - payload: /give_preferences{{"smoking":"outside_only"}}
+      title: TODO
+    - payload: /give_preferences{{"smoking":"allowed"}}
+      title: TODO
+    text: What is your preference on smoking?
+  utter_next_preference/music:
+  - buttons:
+    - payload: /give_preferences{{"music":"live_music"}}
+      title: live music
+    - payload: /give_preferences{{"music":"dj"}}
+      title: DJ
+    - payload: /give_preferences{{"music":"karaoke"}}
+      title: karaoke
+    - payload: /give_preferences{{"music":"juke_box"}}
+      title: juke box
+    - payload: /give_preferences{{"music":"background_music"}}
+      title: background music
+    text: What do you want the restaurant to have for music?
+  utter_thanks_for_feedback:
+  - text: Thanks for the feedback!
+  utter_out_of_scope/decision:
+  - buttons:
+    - payload: /feedback{{"feedback_score":6}}
+      title: This is a restaurant decision.
+    - payload: /feedback{{"feedback_score":1}}
+      title: 1 - No big deal
+    - payload: /feedback{{"feedback_score":2}}
+      title: 2 - Somewhat important
+    - payload: /feedback{{"feedback_score":3}}
+      title: 3 - Important
+    - payload: /feedback{{"feedback_score":4}}
+      title: 4 - Very important
+    - payload: /feedback{{"feedback_score":5}}
+      title: 5 - I die without
+    text: Sorry, I don't think I can help with that decision yet. Maybe the Oogway team will teach me how soon. Would you mind rating how important it is to you that I can help you with this decision on a scale from 1 to 5?
+  utter_out_of_scope/general:
+  - buttons:
+    - payload: /feedback{{"feedback_score":6}}
+      title: This is a restaurant decision.
+    - payload: /feedback{{"feedback_score":1}}
+      title: 1 - No big deal
+    - payload: /feedback{{"feedback_score":2}}
+      title: 2 - Somewhat important
+    - payload: /feedback{{"feedback_score":3}}
+      title: 3 - Important
+    - payload: /feedback{{"feedback_score":4}}
+      title: 4 - Very important
+    - payload: /feedback{{"feedback_score":5}}
+      title: 5 - I die without
+    text: Sorry, I can't respond to that yet. Maybe the Oogway team will teach me how soon. Would you mind rating how important this is to you on a scale from 1 to 5?
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  utter_default:
+  - buttons:
+    - payload: /feedback{{"feedback_score":6}}
+      title: This is a restaurant decision.
+    - payload: /feedback{{"feedback_score":1}}
+      title: 1 - No big deal
+    - payload: /feedback{{"feedback_score":2}}
+      title: 2 - Somewhat important
+    - payload: /feedback{{"feedback_score":3}}
+      title: 3 - Important
+    - payload: /feedback{{"feedback_score":4}}
+      title: 4 - Very important
+    - payload: /feedback{{"feedback_score":5}}
+      title: 5 - I die without
+    text: I'm sorry, I can't help you. Hopefully, the Oogway team will fix me soon. Would you mind rating how important this is to you on a scale from 1 to 5?
+  utter_welcome:
+  - text: You're welcome!
+  - text: Welcome!
+  - text: You're very welcome!
+  utter_iamabot:
+  - text: I am a bot.
+  - text: Artificial intelligence, I am. Talk like Yoda sometimes, I do.
+  utter_apologize_for_mistake:
+  - text: Sorry!
+  - text: Apologies!
+  - text: Sorry! Evidently, I'm not smart enough yet.
+  - text: Oops!
+  - text: Oops! I will learn from this eventually.
+actions:
+- action_trigger_response_selector
+- action_process_preferences
+- action_utter_filtered
+- action_utter_followup_filter_prompt
+- action_utter_options
+- action_remove_preference
+- action_qa_answer
+forms: {}
+e2e_actions: []

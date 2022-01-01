@@ -1,0 +1,35 @@
+version: "2.0"
+
+nlu:
+
+- intent: next_preference/cuisine
+  examples: |
+    - cuisine
+    - kind of food
+    - type of food
+    - I want to tell you the cuisine
+
+- intent: next_preference/price
+  examples: |
+    - price
+    - I want to tell you my budget
+    - I want to tell you my price range
+
+# TODO: Do all the next_preference retrievals intents
+# TODO: actually, maybe do this with entities and roles (roles are the retrieval intents) like we're doing with remove_preference
+# - intent: next_preference/
+
+#- intent: next_preference/food
+#  examples: |
+#    - food
+#    - dish
+#    - dishes
+#    - kind of dishes
+#    - I want to tell you the dishes I want
+
+#- intent: next_preference/restaurant_type
+#  examples: |
+#    - restaurant type
+#    - restaurant_type
+#    - type of restaurant
+#    - I want to tell you the restaurant type

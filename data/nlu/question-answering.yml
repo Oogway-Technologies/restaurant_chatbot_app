@@ -1,0 +1,83 @@
+version: "2.0"
+nlu:
+- intent: qa_question
+  examples: |
+    - How would you make a house conduct electricity?
+    - What is an implication of a cat being an animal?
+    - Could a newborn look over the top of a fully grown horseradish plant?
+    - Why couldn’t Aristotle have used a cellphone?
+    - Should i have a samosa or a burger?
+    - Do you like me?
+    - how big is the moon
+    - how many ounces in a cup
+    - when is mothers day
+    - how many ounces in a pound
+    - dog or cat?
+
+- intent: qa_question
+  examples: |
+    - what is the capital of texas
+    - what is the best indian dish
+    - what are popular foods for thanksgiving?
+    - what city is best for [indian]{"entity": "cuisine", "role": "Indian"} cusine in usa
+    - what is the capital of usa
+    - what is capital of usa?
+    - what is best cuisine with [vegiteraian]{"entity": "dietary_restrictions", "role": "vegetarian_limited"} options?
+    - what are different cuisines?
+    - where should i go tonight?
+    - what are fun things to do in dallas
+    - how big is the moon?
+    - What is the best dish in US?
+    - How far is the moon?
+    - what is the capital of Italy?
+    - What type of animal is a leon?
+    - what type of animal is a lion?
+    - Who is Donald Trump?
+    - How do people give birth?
+    - Who is the president of the united states?
+    - What causes migranes?
+    - What is a banana?
+    - What are the most common words in english?
+
+- intent: qa_question
+  examples: |
+    - What is 2 + 2?
+    - Who's the US President?
+    - What's the weather?
+    - What is the real name of Lady Gaga?
+    - In what year was the constitution written?
+    - Who wrote the bill or rights?
+    - How do I renew my passport?
+    - Where do I find a notary?
+    - how do i give birth?
+    - What is a preamble?
+    - What animal is a capricorn?
+    - What color is indigo?
+    - Who was Bob Marley?
+    - Who went to space recently?
+    - What is my IP?
+    - How do I register to vote?
+    - How many ounces in a pound?
+    - When is mothers day?
+    - How do I lose weight?
+    - How many weeks in a year?
+    - How do I make pancakes?
+    - How do you make pizza?
+    - How to make money
+    - How many feet in a mile
+    - how to lose belly fat
+    - how to boil eggs
+    - How do I write a check?
+    - When is labor day?
+    - When is memorial day?
+    - What are national holidays?
+    - What is the temperature?
+    - Why is the sky blue?
+    - What is a good American dish?
+    - What is the best American burger?
+    - Who is the current Italian president?
+    - What is the capital of France?
+    - What are the top restaurants in Boston?
+    - What is the best restaurant in New York?
+    - What type of food is Boston famous for?
+    - What famous dishes are from California?

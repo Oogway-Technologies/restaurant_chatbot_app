@@ -1,0 +1,107 @@
+version: "2.0"
+nlu:
+- intent: ask_options
+  examples: |
+    - what kind of preferences can I give you
+    - what preferences do you take?
+    - what information can you understand?
+    - what can I tell you?
+    - what are my options?
+    - options
+- intent: users_needs_help_deciding
+  examples: |
+    - not sure
+    - I don't know what I want
+    - i dont know
+    - help me decide
+- intent: user_alerts_bot_mistake
+  examples: |
+    - wrong
+    - you aren't understanding me
+    - I haven't said anything about preferences!
+    - I don't think you are understanding...
+- intent: out_of_scope/decision
+  examples: |
+    - What job should I get?
+    - what should I wear
+    - which product to buy
+    - should I live or die
+    - Get divorced or not
+    - Buy a home or not
+- intent: out_of_scope/general
+  examples: |
+    - what is my ip
+    - what time is it
+    - how to register to vote
+    - how to tie a tie
+    - can you run it
+    - what song is this
+    - how to lose weight
+- intent: thank_you
+  examples: |
+    - thank ya
+    - thanks!
+    - thank you very much
+    - I'm grateful
+    - ty
+    - TYVM
+    - Thank you
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hello
+    - Hi bot
+    - Howdy captain
+    - Hello robot friend
+    - Hi
+    - Howdy bot
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - r u real
+    - are you real
+    - Are you real

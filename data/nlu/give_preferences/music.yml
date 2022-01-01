@@ -1,0 +1,29 @@
+version: "2.0"
+
+nlu:
+
+# String Yelp displays for these attributes
+- intent: give_preferences
+  examples: |
+    - [Background Music]{"entity": "music", "role": "background_music"}
+    - [Live Music]{"entity": "music", "role": "live_music"}
+    - [Juke Box]{"entity": "music", "role": "juke_box"}
+    - [Karaoke]{"entity": "music", "role": "karaoke"}
+    - [DJ]{"entity": "music", "role": "dj"}
+
+# Lowercase version of the string Yelp displays for these attributes
+- intent: give_preferences
+  examples: |
+    - [background music]{"entity": "music", "role": "background_music"}
+    - [live music]{"entity": "music", "role": "live_music"}
+    - [juke box]{"entity": "music", "role": "juke_box"}
+    - [karaoke]{"entity": "music", "role": "karaoke"}
+    - [dj]{"entity": "music", "role": "dj"}
+
+# AND/OR examples
+- intent: give_preferences
+  examples: |
+    - [karaoke]{"entity": "music", "role": "karaoke"} [and]{"entity": "music", "role": "AND"} [juke box]{"entity": "music", "role": "juke_box"}
+    - restaurant that has [karaoke]{"entity": "music", "role": "karaoke"} [and]{"entity": "music", "role": "AND"} a [juke box]{"entity": "music", "role": "juke_box"}
+    - [live music]{"entity": "music", "role": "live_music"} [or]{"entity": "music", "role": "OR"} [background music]{"entity": "music", "role": "background_music"}
+    - restaurant that has [live music]{"entity": "music", "role": "live_music"} [or]{"entity": "music", "role": "OR"} [background music]{"entity": "music", "role": "background_music"}

@@ -1,0 +1,71 @@
+# version: "2.0"
+#
+# nlu:
+#
+# Possible Yelp roles for amenities with an exact match to the entity
+#- intent: give_preferences
+#
+#    - 'amenities': { 'delivery': 'bool',
+#                     'drive-thru': 'bool',
+#                     'happy hour': 'bool',
+#                     'happy hour specials': 'bool',
+#                     'pool table': 'bool',
+#                     'private dining': 'bool',
+#                     'reservations': 'bool',
+#                     'takes reservations': 'bool',
+#                     'takeout': 'bool',
+#                     'tv': 'bool',
+#                     'virtual restaurant': 'bool',
+#                     'waiter service': 'bool',
+#                     'military discount': 'bool',
+#                     'wheelchair_accessible': 'bool',
+#                     'good_for_groups': 'bool',
+#                     'good_for_kids': 'bool',
+#                     'catering': 'bool',
+#                     'dogs_allowed': 'bool',
+#                     'gender_neutral_restrooms': 'bool',
+#                     'good_for_dancing': 'bool',
+#                     'good_for_work': 'bool',
+#                     'all staff fully vaccinated': 'bool',
+#                     'masks required': 'bool',
+#                     'open to all': 'bool',
+#                     'proof of vaccination required': 'bool',
+#                     'staff wears masks': 'bool' },
+#  examples: |
+#    - [delivery]{"entity": "amenities", "role": "delivery"}
+#    - [drive-thru]{"entity": "amenities", "role": "drive-thru"}
+#    - [happy hour]{"entity": "amenities", "role": "happy hour"}
+#    - [happy hour specials]{"entity": "amenities", "role": "happy hour specials"}
+#    - [pool table]{"entity": "amenities", "role": "pool table"}
+#    - [private dining]{"entity": "amenities", "role": "private dining"}
+#    - [reservations]{"entity": "amenities", "role": "reservations"}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+#    - []{"entity": "amenities", "role": ""}
+

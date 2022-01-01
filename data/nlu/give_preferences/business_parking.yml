@@ -1,0 +1,31 @@
+version: "2.0"
+
+nlu:
+
+# String Yelp displays for these attributes
+- intent: give_preferences
+  examples: |
+    - [Street Parking]{"entity": "business_parking", "role": "street"}
+    - [Bike Parking]{"entity": "business_parking", "role": "bike"}
+    - [Private Lot Parking]{"entity": "business_parking", "role": "private_lot"}
+    - [Valet Parking]{"entity": "business_parking", "role": "valet"}
+    - [Garage Parking]{"entity": "business_parking", "role": "garage"}
+    - [Validated Parking]{"entity": "business_parking", "role": "validated"}
+
+# Lowercase version of the string Yelp displays for these attributes
+- intent: give_preferences
+  examples: |
+    - [street parking]{"entity": "business_parking", "role": "street"}
+    - [bike parking]{"entity": "business_parking", "role": "bike"}
+    - [private lot parking]{"entity": "business_parking", "role": "private_lot"}
+    - [valet parking]{"entity": "business_parking", "role": "valet"}
+    - [garage parking]{"entity": "business_parking", "role": "garage"}
+    - [validated parking]{"entity": "business_parking", "role": "validated"}
+
+# AND/OR examples
+- intent: give_preferences
+  examples: |
+    - [bike]{"entity": "business_parking", "role": "bike"} [and]{"entity": "business_parking", "role": "AND"} [street]{"entity": "business_parking", "role": "street"} parking
+    - restaurant with [bike]{"entity": "business_parking", "role": "bike"} [and]{"entity": "business_parking", "role": "AND"} [street]{"entity": "business_parking", "role": "street"} parking
+    - [bike]{"entity": "business_parking", "role": "bike"} [or]{"entity": "business_parking", "role": "OR"} [street]{"entity": "business_parking", "role": "street"} parking
+    - restaurant with [bike]{"entity": "business_parking", "role": "bike"} [or]{"entity": "business_parking", "role": "OR"} [street]{"entity": "business_parking", "role": "street"} parking

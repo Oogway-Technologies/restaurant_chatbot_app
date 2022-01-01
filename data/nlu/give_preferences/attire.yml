@@ -1,0 +1,22 @@
+version: "2.0"
+
+nlu:
+
+# String Yelp displays for these attributes
+- intent: give_preferences
+  examples: |
+    - [Casual Dress]{"entity": "attire", "role": "casual_dress"}
+    - [Dressy]{"entity": "attire", "role": "dressy"}
+
+# Lowercase version of the string Yelp displays for these attributes
+- intent: give_preferences
+  examples: |
+    - [casual dress]{"entity": "attire", "role": "casual_dress"}
+    - [dressy]{"entity": "attire", "role": "dressy"}
+
+# OR examples
+# TODO: consider removing these and not doing the OR query in this case
+- intent: give_preferences
+  examples: |
+    - [dressy]{"entity": "attire", "role": "dressy"} [or]{"entity": "attire", "role": "OR"} [casual dress]{"entity": "attire", "role": "casual_dress"}
+    - the dress code can be either [dressy]{"entity": "attire", "role": "dressy"} [or]{"entity": "attire", "role": "OR"} [casual]{"entity": "attire", "role": "casual_dress"}

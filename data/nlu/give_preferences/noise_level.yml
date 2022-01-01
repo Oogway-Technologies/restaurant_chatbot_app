@@ -1,0 +1,25 @@
+version: "2.0"
+
+nlu:
+
+# Lowercase version of the string Yelp displays for these attributes
+- intent: give_preferences
+  examples: |
+    - [quiet]{"entity": "noise_level", "role": "quiet"}
+    - [moderate noise]{"entity": "noise_level", "role": "moderate"}
+    - [loud]{"entity": "noise_level", "role": "loud"}
+    - [very loud]{"entity": "noise_level", "role": "very_loud"}
+
+# Synonyms
+- intent: give_preferences
+  examples: |
+    - [low noise]{"entity": "noise_level", "role": "quiet"}
+    - [medium noise]{"entity": "noise_level", "role": "moderate"}
+    - [noisy]{"entity": "noise_level", "role": "loud"}
+    - [very noisy]{"entity": "noise_level", "role": "very_loud"}
+    
+# OR examples
+- intent: give_preferences
+  examples: |
+    - [quiet]{"entity": "noise_level", "role": "quiet"} [or]{"entity": "noise_level", "role": "OR"} [moderately quiet]{"entity": "noise_level", "role": "moderate"}
+    - restaurant that is [quiet]{"entity": "noise_level", "role": "quiet"} [or]{"entity": "noise_level", "role": "OR"} [moderately quiet]{"entity": "noise_level", "role": "moderate"}

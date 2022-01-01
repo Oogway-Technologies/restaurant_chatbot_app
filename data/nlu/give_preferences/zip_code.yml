@@ -1,0 +1,15 @@
+version: "2.0"
+
+nlu:
+
+- regex: zip_code
+  examples: |
+    - \d{5}
+
+- intent: give_preferences
+  examples: |
+    - [92629](zip_code)
+    - [01778](zip_code)
+    - [10001](zip_code)
+    - [75080](zip_code)
+    - [55408](zip_code)

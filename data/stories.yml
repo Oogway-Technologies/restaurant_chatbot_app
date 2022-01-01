@@ -1,0 +1,31 @@
+version: "2.0"
+
+stories:
+
+#- story: hello goodbye
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: goodbye
+#  - action: utter_goodbye
+
+- story: happy path
+  steps:
+  - intent: give_preferences
+#   - slot_was_set:
+#      - GPE: false
+  - action: action_process_preferences
+  - action: action_utter_filtered
+  - action: action_utter_followup_filter_prompt
+
+# - story: User gives city/state
+#   steps:
+#    - intent: give_preferences
+#    - slot_was_set:
+#      - GPE: true
+#    - action: action_process_gpe
+
+- story: Users needs help deciding
+  steps:
+  - intent: users_needs_help_deciding
+  - action: action_utter_followup_filter_prompt

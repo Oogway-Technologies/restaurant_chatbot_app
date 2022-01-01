@@ -1,0 +1,18 @@
+version: "2.0"
+
+nlu:
+
+# Lowercase version of the string Yelp displays for these attributes
+- intent: give_preferences
+  examples: |
+    - [outdoor seating]{"entity": "outdoor_seating", "role": "present"}
+    - [heated outdoor seating]{"entity": "outdoor_seating", "role": "heated"}
+    - [covered outdoor seating]{"entity": "outdoor_seating", "role": "covered"}
+
+# Other examples
+- intent: give_preferences
+  examples: |
+    - [outside seating]{"entity": "outdoor_seating", "role": "present"}
+    - [heated outside seating]{"entity": "outdoor_seating", "role": "heated"}
+    - [covered outside seating]{"entity": "outdoor_seating", "role": "covered"}
+    - [shaded outside seating]{"entity": "outdoor_seating", "role": "covered"}

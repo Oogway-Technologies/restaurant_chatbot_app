@@ -1,0 +1,28 @@
+version: "2.0"
+
+nlu:
+
+# String Yelp displays for these attributes
+- intent: give_preferences
+  examples: |
+    - [Women-owned]{"entity": "business_owner", "role": "women"}
+    - [Black-owned]{"entity": "business_owner", "role": "black"}
+    - [Asian-owned]{"entity": "business_owner", "role": "asian"}
+    - [Latinx-owned]{"entity": "business_owner", "role": "latinx"}
+    - [LGBTQ-owned]{"entity": "business_owner", "role": "lgbtq"}
+
+# Lowercase and hyphenless version of the string Yelp displays for these attributes
+- intent: give_preferences
+  examples: |
+    - [women owned]{"entity": "business_owner", "role": "women"}
+    - [black owned]{"entity": "business_owner", "role": "black"}
+    - [asian owned]{"entity": "business_owner", "role": "asian"}
+    - [latinx owned]{"entity": "business_owner", "role": "latinx"}
+    - [lgbtq owned]{"entity": "business_owner", "role": "lgbtq"}
+
+# OR examples
+- intent: give_preferences
+  examples: |
+    - [women]{"entity": "business_owner", "role": "women"} [or]{"entity": "business_owner", "role": "OR"} [black]{"entity": "business_owner", "role": "black"} owned
+    - restaurant that's owned by a [woman]{"entity": "business_owner", "role": "women"} [or]{"entity": "business_owner", "role": "OR"} [black person]{"entity": "business_owner", "role": "black"}
+    - a place that's [black owned]{"entity": "business_owner", "role": "black"} [or]{"entity": "business_owner", "role": "OR"} [women owned]{"entity": "business_owner", "role": "women"}

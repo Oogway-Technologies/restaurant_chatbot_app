@@ -1,0 +1,18 @@
+version: "2.0"
+
+nlu:
+
+# String Yelp displays for these attributes
+- intent: give_preferences
+  examples: |
+    - [No Smoking]{"entity": "smoking", "role": "no_smoking"}
+    - [Smoking Outside Only]{"entity": "smoking", "role": "outside_only"}
+    - [Smoking Allowed]{"entity": "smoking", "role": "allowed"}
+
+
+# Lowercase version of the string Yelp displays for these attributes
+- intent: give_preferences
+  examples: |
+    - [no smoking]{"entity": "smoking", "role": "no_smoking"}
+    - [smoking outside Only]{"entity": "smoking", "role": "outside_only"}
+    - [smoking allowed]{"entity": "smoking", "role": "allowed"}

@@ -1,0 +1,134 @@
+version: "2.0"
+
+nlu:
+
+# Generated identity restaurant_type examples (for all Yelp restaurant_type categories) from data_creation_tools.py
+- intent: give_preferences
+  examples: |
+    - [Barbeque]{"entity": "restaurant_type", "role": "Barbeque"}
+    - [Brasseries]{"entity": "restaurant_type", "role": "Brasseries"}
+    - [Breakfast & Brunch]{"entity": "restaurant_type", "role": "Breakfast & Brunch"}
+    - [Breakfast]{"entity": "restaurant_type", "role": "Breakfast & Brunch"}
+    - [Brunch]{"entity": "restaurant_type", "role": "Breakfast & Brunch"}
+    - [Buffets]{"entity": "restaurant_type", "role": "Buffets"}
+    - [Cafes]{"entity": "restaurant_type", "role": "Cafes"}
+    - [Chicken Shop]{"entity": "restaurant_type", "role": "Chicken Shop"}
+    - [Creperies]{"entity": "restaurant_type", "role": "Creperies"}
+    - [Delis]{"entity": "restaurant_type", "role": "Delis"}
+    - [Diners]{"entity": "restaurant_type", "role": "Diners"}
+    - [Dinner Theater]{"entity": "restaurant_type", "role": "Dinner Theater"}
+    - [Fast Food]{"entity": "restaurant_type", "role": "Fast Food"}
+    - [Food Court]{"entity": "restaurant_type", "role": "Food Court"}
+    - [Food Stands]{"entity": "restaurant_type", "role": "Food Stands"}
+    - [Gastropubs]{"entity": "restaurant_type", "role": "Gastropubs"}
+    - [Pop-Up]{"entity": "restaurant_type", "role": "Pop-Up Restaurants"} Restaurants
+    - [Steakhouses]{"entity": "restaurant_type", "role": "Steakhouses"}
+    - [Sushi Bars]{"entity": "restaurant_type", "role": "Sushi Bars"}
+    - [Tapas Bars]{"entity": "restaurant_type", "role": "Tapas Bars"}
+    - [Bakeries]{"entity": "restaurant_type", "role": "Bakeries"}
+    - [Breweries]{"entity": "restaurant_type", "role": "Breweries"}
+    - [Brewpubs]{"entity": "restaurant_type", "role": "Brewpubs"}
+    - [Butcher]{"entity": "restaurant_type", "role": "Butcher"}
+    - [Cideries]{"entity": "restaurant_type", "role": "Cideries"}
+    - [Coffee Roasteries]{"entity": "restaurant_type", "role": "Coffee Roasteries"}
+    - [Food Trucks]{"entity": "restaurant_type", "role": "Food Trucks"}
+    - [Juice Bars & Smoothies]{"entity": "restaurant_type", "role": "Juice Bars & Smoothies"}
+    - [Juice Bars]{"entity": "restaurant_type", "role": "Juice Bars & Smoothies"}
+    - [Smoothies]{"entity": "restaurant_type", "role": "Juice Bars & Smoothies"}
+    - [Patisserie/Cake Shop]{"entity": "restaurant_type", "role": "Patisserie/Cake Shop"}
+    - [Patisserie]{"entity": "restaurant_type", "role": "Patisserie/Cake Shop"}
+    - [Cake Shop]{"entity": "restaurant_type", "role": "Patisserie/Cake Shop"}
+    - [Smokehouse]{"entity": "restaurant_type", "role": "Smokehouse"}
+    - [Specialty Food]{"entity": "restaurant_type", "role": "Specialty Food"}
+    - [Cheese Shops]{"entity": "restaurant_type", "role": "Cheese Shops"}
+    - [Pasta Shops]{"entity": "restaurant_type", "role": "Pasta Shops"}
+    - [Seafood Markets]{"entity": "restaurant_type", "role": "Seafood Markets"}
+    - [Wineries]{"entity": "restaurant_type", "role": "Wineries"}
+    - [Bars]{"entity": "restaurant_type", "role": "Bars"}
+    - [Beer Bar]{"entity": "restaurant_type", "role": "Beer Bar"}
+    - [Champagne Bars]{"entity": "restaurant_type", "role": "Champagne Bars"}
+    - [Cocktail Bars]{"entity": "restaurant_type", "role": "Cocktail Bars"}
+    - [Dive Bars]{"entity": "restaurant_type", "role": "Dive Bars"}
+    - [Gay Bars]{"entity": "restaurant_type", "role": "Gay Bars"}
+    - [Irish Pub]{"entity": "restaurant_type", "role": "Irish Pub"}
+    - [Lounges]{"entity": "restaurant_type", "role": "Lounges"}
+    - [Pubs]{"entity": "restaurant_type", "role": "Pubs"}
+    - [Sports Bars]{"entity": "restaurant_type", "role": "Sports Bars"}
+    - [Tiki Bars]{"entity": "restaurant_type", "role": "Tiki Bars"}
+    - [Vermouth Bars]{"entity": "restaurant_type", "role": "Vermouth Bars"}
+    - [Whiskey Bars]{"entity": "restaurant_type", "role": "Whiskey Bars"}
+    - [Wine Bars]{"entity": "restaurant_type", "role": "Wine Bars"}
+    - [Beer Gardens]{"entity": "restaurant_type", "role": "Beer Gardens"}
+
+# Generated *lowercase, singular* restaurant_type examples (for all Yelp restaurant_type categories) from data_creation_tools.py
+- intent: give_preferences
+  examples: |
+    - [barbeque]{"entity": "restaurant_type", "role": "Barbeque"}
+    - [brassery]{"entity": "restaurant_type", "role": "Brasseries"}
+    - [breakfast & brunch]{"entity": "restaurant_type", "role": "Breakfast & Brunch"}
+    - [breakfast]{"entity": "restaurant_type", "role": "Breakfast & Brunch"}
+    - [brunch]{"entity": "restaurant_type", "role": "Breakfast & Brunch"}
+    - [buffet]{"entity": "restaurant_type", "role": "Buffets"}
+    - [cafe]{"entity": "restaurant_type", "role": "Cafes"}
+    - [chicken shop]{"entity": "restaurant_type", "role": "Chicken Shop"}
+    - [crepery]{"entity": "restaurant_type", "role": "Creperies"}
+    - [deli]{"entity": "restaurant_type", "role": "Delis"}
+    - [diner]{"entity": "restaurant_type", "role": "Diners"}
+    - [dinner theater]{"entity": "restaurant_type", "role": "Dinner Theater"}
+    - [fast food]{"entity": "restaurant_type", "role": "Fast Food"}
+    - [food court]{"entity": "restaurant_type", "role": "Food Court"}
+    - [food stand]{"entity": "restaurant_type", "role": "Food Stands"}
+    - [gastropub]{"entity": "restaurant_type", "role": "Gastropubs"}
+    - [pop-up]{"entity": "restaurant_type", "role": "Pop-Up Restaurants"} restaurant
+    - [steakhouse]{"entity": "restaurant_type", "role": "Steakhouses"}
+    - [sushi bar]{"entity": "restaurant_type", "role": "Sushi Bars"}
+    - [tapas bar]{"entity": "restaurant_type", "role": "Tapas Bars"}
+    - [bakery]{"entity": "restaurant_type", "role": "Bakeries"}
+    - [brewery]{"entity": "restaurant_type", "role": "Breweries"}
+    - [brewpub]{"entity": "restaurant_type", "role": "Brewpubs"}
+    - [butcher]{"entity": "restaurant_type", "role": "Butcher"}
+    - [cidery]{"entity": "restaurant_type", "role": "Cideries"}
+    - [coffee roastery]{"entity": "restaurant_type", "role": "Coffee Roasteries"}
+    - [food truck]{"entity": "restaurant_type", "role": "Food Trucks"}
+    - [juice bars & smoothy]{"entity": "restaurant_type", "role": "Juice Bars & Smoothies"}
+    - [juice bar]{"entity": "restaurant_type", "role": "Juice Bars & Smoothies"}
+    - [smoothy]{"entity": "restaurant_type", "role": "Juice Bars & Smoothies"}
+    - [patisserie/cake shop]{"entity": "restaurant_type", "role": "Patisserie/Cake Shop"}
+    - [patisserie]{"entity": "restaurant_type", "role": "Patisserie/Cake Shop"}
+    - [cake shop]{"entity": "restaurant_type", "role": "Patisserie/Cake Shop"}
+    - [smokehouse]{"entity": "restaurant_type", "role": "Smokehouse"}
+    - [specialty food]{"entity": "restaurant_type", "role": "Specialty Food"}
+    - [cheese shop]{"entity": "restaurant_type", "role": "Cheese Shops"}
+    - [pasta shop]{"entity": "restaurant_type", "role": "Pasta Shops"}
+    - [seafood market]{"entity": "restaurant_type", "role": "Seafood Markets"}
+    - [winery]{"entity": "restaurant_type", "role": "Wineries"}
+    - [bar]{"entity": "restaurant_type", "role": "Bars"}
+    - [beer bar]{"entity": "restaurant_type", "role": "Beer Bar"}
+    - [champagne bar]{"entity": "restaurant_type", "role": "Champagne Bars"}
+    - [cocktail bar]{"entity": "restaurant_type", "role": "Cocktail Bars"}
+    - [dive bar]{"entity": "restaurant_type", "role": "Dive Bars"}
+    - [gay bar]{"entity": "restaurant_type", "role": "Gay Bars"}
+    - [irish pub]{"entity": "restaurant_type", "role": "Irish Pub"}
+    - [lounge]{"entity": "restaurant_type", "role": "Lounges"}
+    - [pub]{"entity": "restaurant_type", "role": "Pubs"}
+    - [sports bar]{"entity": "restaurant_type", "role": "Sports Bars"}
+    - [tiki bar]{"entity": "restaurant_type", "role": "Tiki Bars"}
+    - [vermouth bar]{"entity": "restaurant_type", "role": "Vermouth Bars"}
+    - [whiskey bar]{"entity": "restaurant_type", "role": "Whiskey Bars"}
+    - [wine bar]{"entity": "restaurant_type", "role": "Wine Bars"}
+    - [beer garden]{"entity": "restaurant_type", "role": "Beer Gardens"}
+
+# Negation examples
+- intent: give_preferences
+  examples: |
+    - [not]{"entity": "restaurant_type", "role": "NOT"} a [bar]{"entity": "restaurant_type", "role": "Bars"}
+    - [something other than]{"entity": "restaurant_type", "role": "NOT"} a [bar]{"entity": "restaurant_type", "role": "Bars"}
+    - I'm looking for [anything but]{"entity": "restaurant_type", "role": "NOT"} a [bar]{"entity": "restaurant_type", "role": "Bars"}
+
+# AND/OR examples
+- intent: give_preferences
+  examples: |
+    - [cafe]{"entity": "restaurant_type", "role": "Cafes"} [with]("entity": "restaurant_type", "role": "AND"} [brunch]{"entity": "restaurant_type", "role": "Breakfast & Brunch"}
+    - [fast food]{"entity": "restaurant_type", "role": "Fast Food"} [and]("entity": "restaurant_type", "role": "AND"} [smoothies]{"entity": "restaurant_type", "role": "Juice Bars & Smoothies"}
+    - [cafe]{"entity": "restaurant_type", "role": "Cafes"} [or]("entity": "restaurant_type", "role": "OR"} [diner]{"entity": "restaurant_type", "role": "Diners"}
+    - [fast food]{"entity": "restaurant_type", "role": "Fast Food"}, [cafe]{"entity": "restaurant_type", "role": "Cafes"}, [or]("entity": "restaurant_type", "role": "OR"} [diner]{"entity": "restaurant_type", "role": "Diners"}

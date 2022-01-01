@@ -1,0 +1,41 @@
+version: "2.0"
+
+nlu:
+
+# Lowercase version of the string Yelp displays for these attributes, minus the "Options" suffix
+- intent: give_preferences
+  examples: |
+    - [gluten-free]{"entity": "dietary_restrictions", "role": "gluten_free"}
+    - [dairy-free]{"entity": "dietary_restrictions", "role": "dairy_free"}
+    - [soy-free]{"entity": "dietary_restrictions", "role": "soy_free"}
+    - [keto]{"entity": "dietary_restrictions", "role": "keto"}
+    - [kosher]{"entity": "dietary_restrictions", "role": "kosher"}
+    - [halal]{"entity": "dietary_restrictions", "role": "halal"}
+    - [pescatarian]{"entity": "dietary_restrictions", "role": "pescatarian"}
+    - [vegan]{"entity": "dietary_restrictions", "role": "vegan"}
+    - [many vegetarian]{"entity": "dietary_restrictions", "role": "vegetarian_many"} options
+    - [limited vegetarian]{"entity": "dietary_restrictions", "role": "vegetarian_limited"} options
+    - [no vegetarian]{"entity": "dietary_restrictions", "role": "vegetarian_no"} options
+
+# Other examples
+- intent: give_preferences
+  examples: |
+    - [gluten free]{"entity": "dietary_restrictions", "role": "gluten_free"}
+    - [dairy free]{"entity": "dietary_restrictions", "role": "dairy_free"}
+    - [soy free]{"entity": "dietary_restrictions", "role": "soy_free"}
+    - [ketogenic]{"entity": "dietary_restrictions", "role": "keto"}
+    - [Kosher]{"entity": "dietary_restrictions", "role": "kosher"}
+    - [Halal]{"entity": "dietary_restrictions", "role": "halal"}
+    - [Pescatarian]{"entity": "dietary_restrictions", "role": "pescatarian"}
+    - [Vegan]{"entity": "dietary_restrictions", "role": "vegan"}
+    - [vegetarian]{"entity": "dietary_restrictions", "role": "vegetarian_many"}
+    - [some vegetarian]{"entity": "dietary_restrictions", "role": "vegetarian_limited"}
+    - [non-vegetarian]{"entity": "dietary_restrictions", "role": "vegetarian_no"}
+
+# AND/OR examples
+- intent: give_preferences
+  examples: |
+    - [vegan]{"entity": "dietary_restrictions", "role": "vegan"} [and]{"entity": "dietary_restrictions", "role": "AND"} [gluten free]{"entity": "dietary_restrictions", "role": "gluten_free"}
+    - restaurant that has [vegan]{"entity": "dietary_restrictions", "role": "vegan"} [and]{"entity": "dietary_restrictions", "role": "AND"} [gluten free]{"entity": "dietary_restrictions", "role": "gluten_free"} food
+    - [vegan]{"entity": "dietary_restrictions", "role": "vegan"} [or]{"entity": "dietary_restrictions", "role": "OR"} [vegetarian]{"entity": "dietary_restrictions", "role": "vegetarian_many"}
+    - restaurant that has [vegan]{"entity": "dietary_restrictions", "role": "vegan"} [or]{"entity": "dietary_restrictions", "role": "OR"} [vegetarian]{"entity": "dietary_restrictions", "role": "vegetarian_many"} food

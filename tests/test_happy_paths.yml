@@ -1,0 +1,113 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+version: "2.0"
+stories:
+- story: Happy path from button clicking (Conversation ID 0b24e2d197f34fd59a04531120768ce8)
+  steps:
+  - intent: greet
+    user: |-
+      hi
+  - action: utter_greet
+  - action: utter_preference_prompt
+  - intent: give_preferences
+    user: |-
+      /give_preferences{"price":"1"}
+  - action: action_process_preferences
+  - slot_was_set:
+    - price_raw:
+      - '1'
+  - slot_was_set:
+    - price_class:
+      - '1'
+  - slot_was_set:
+    - price_operator: OR
+  - action: action_utter_filtered
+  - action: action_utter_followup_filter_prompt
+  - intent: trigger_response_selector
+    user: |-
+      /trigger_response_selector{"retrieval_intent":"next_preference/cuisine"}
+  - slot_was_set:
+    - retrieval_intent: next_preference/cuisine
+  - action: action_trigger_response_selector
+  - slot_was_set:
+    - retrieval_intent: null
+  - intent: give_preferences
+    user: |-
+      /give_preferences{"cuisine":"Mexican"}
+  - action: action_process_preferences
+  - slot_was_set:
+    - cuisine_raw:
+      - Mexican
+  - slot_was_set:
+    - cuisine_class:
+      - Mexican
+  - slot_was_set:
+    - cuisine_operator: OR
+  - action: action_utter_filtered
+  - action: action_utter_followup_filter_prompt
+
+- story: Happy path by giving cuisine and price immediately (Conversation ID 87ae63cf4e4a417b8f9ec8710b1c024f)
+  steps:
+  - intent: give_preferences
+    user: |-
+      [Mexican](cuisine) [and]{"entity": "cuisine", "role": "AND"} [cheap]{"entity": "price", "role": "1"}
+  - action: action_process_preferences
+  - slot_was_set:
+    - cuisine_raw:
+      - Mexican
+  - slot_was_set:
+    - cuisine_class:
+      - Mexican
+  - slot_was_set:
+    - cuisine_operator: AND
+  - slot_was_set:
+    - price_raw:
+      - cheap
+  - slot_was_set:
+    - price_class:
+      - '1'
+  - slot_was_set:
+    - price_operator: OR
+  - action: action_utter_filtered
+  - action: action_utter_followup_filter_prompt
+
+- story: Happy path by giving one at a time via text (Conversation ID 117fc0a2d01b467b99472218ac69f353)
+  steps:
+  - intent: greet
+    user: |-
+      hi
+  - action: utter_greet
+  - action: utter_preference_prompt
+  - intent: give_preferences
+    user: |-
+      [Chinese](cuisine) restaurant
+  - action: action_process_preferences
+  - slot_was_set:
+    - cuisine_raw:
+      - Chinese
+  - slot_was_set:
+    - cuisine_class:
+      - Chinese
+  - slot_was_set:
+    - cuisine_operator: OR
+  - action: action_utter_filtered
+  - action: action_utter_followup_filter_prompt
+  - intent: next_preference/price
+    user: |-
+      price
+  - action: utter_next_preference
+  - intent: give_preferences
+    user: |-
+      /give_preferences{"price":"1"}
+  - action: action_process_preferences
+  - slot_was_set:
+    - price_raw:
+      - '1'
+  - slot_was_set:
+    - price_class:
+      - '1'
+  - slot_was_set:
+    - price_operator: OR
+  - action: action_utter_filtered
+  - action: action_utter_followup_filter_prompt

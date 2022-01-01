@@ -1,0 +1,105 @@
+version: "2.0"
+
+nlu:
+
+# Generated identity restaurant_food_type examples (for all Yelp restaurant_food_type categories) from data_creation_tools.py
+- intent: give_preferences
+  examples: |
+    - [Burgers]{"entity": "restaurant_food_type", "role": "Burgers"}
+    - [Cheesesteaks]{"entity": "restaurant_food_type", "role": "Cheesesteaks"}
+    - [Chicken Wings]{"entity": "restaurant_food_type", "role": "Chicken Wings"}
+    - [Dim Sum]{"entity": "restaurant_food_type", "role": "Dim Sum"}
+    - [Comfort Food]{"entity": "restaurant_food_type", "role": "Comfort Food"}
+    - [Fish & Chips]{"entity": "restaurant_food_type", "role": "Fish & Chips"}
+    - [Fish]{"entity": "restaurant_food_type", "role": "Fish & Chips"}
+    - [Chips]{"entity": "restaurant_food_type", "role": "Fish & Chips"}
+    - [Hot Dogs]{"entity": "restaurant_food_type", "role": "Hot Dogs"}
+    - [Hot Pot]{"entity": "restaurant_food_type", "role": "Hot Pot"}
+    - [Ramen]{"entity": "restaurant_food_type", "role": "Ramen"}
+    - [Kebab]{"entity": "restaurant_food_type", "role": "Kebab"}
+    - [Tacos]{"entity": "restaurant_food_type", "role": "Tacos"}
+    - [Noodles]{"entity": "restaurant_food_type", "role": "Noodles"}
+    - [Pizza]{"entity": "restaurant_food_type", "role": "Pizza"}
+    - [Salad]{"entity": "restaurant_food_type", "role": "Salad"}
+    - [Sandwiches]{"entity": "restaurant_food_type", "role": "Sandwiches"}
+    - [Seafood]{"entity": "restaurant_food_type", "role": "Seafood"}
+    - [Soup]{"entity": "restaurant_food_type", "role": "Soup"}
+    - [Tapas/Small Plates]{"entity": "restaurant_food_type", "role": "Tapas/Small Plates"}
+    - [Tapas]{"entity": "restaurant_food_type", "role": "Tapas/Small Plates"}
+    - [Small Plates]{"entity": "restaurant_food_type", "role": "Tapas/Small Plates"}
+    - [Waffles]{"entity": "restaurant_food_type", "role": "Waffles"}
+    - [Wraps]{"entity": "restaurant_food_type", "role": "Wraps"}
+    - [Bagels]{"entity": "restaurant_food_type", "role": "Bagels"}
+    - [Bubble Tea]{"entity": "restaurant_food_type", "role": "Bubble Tea"}
+    - [Coffee & Tea]{"entity": "restaurant_food_type", "role": "Coffee & Tea"}
+    - [Coffee]{"entity": "restaurant_food_type", "role": "Coffee & Tea"}
+    - [Tea]{"entity": "restaurant_food_type", "role": "Coffee & Tea"}
+    - [Cupcakes]{"entity": "restaurant_food_type", "role": "Cupcakes"}
+    - [Desserts]{"entity": "restaurant_food_type", "role": "Desserts"}
+    - [Donuts]{"entity": "restaurant_food_type", "role": "Donuts"}
+    - [Gelato]{"entity": "restaurant_food_type", "role": "Gelato"}
+    - [Ice Cream & Frozen Yogurt]{"entity": "restaurant_food_type", "role": "Ice Cream & Frozen Yogurt"}
+    - [Ice Cream]{"entity": "restaurant_food_type", "role": "Ice Cream & Frozen Yogurt"}
+    - [Frozen Yogurt]{"entity": "restaurant_food_type", "role": "Ice Cream & Frozen Yogurt"}
+    - [Poke]{"entity": "restaurant_food_type", "role": "Poke"}
+    - [Pretzels]{"entity": "restaurant_food_type", "role": "Pretzels"}
+    - [Shaved Ice]{"entity": "restaurant_food_type", "role": "Shaved Ice"}
+
+
+# Generated *lowercase* restaurant_food_type examples (for all Yelp restaurant_food_type categories) from data_creation_tools.py
+- intent: give_preferences
+  examples: |
+    - [burgers]{"entity": "restaurant_food_type", "role": "Burgers"}
+    - [cheesesteaks]{"entity": "restaurant_food_type", "role": "Cheesesteaks"}
+    - [chicken wings]{"entity": "restaurant_food_type", "role": "Chicken Wings"}
+    - [dim sum]{"entity": "restaurant_food_type", "role": "Dim Sum"}
+    - [comfort food]{"entity": "restaurant_food_type", "role": "Comfort Food"}
+    - [fish & chips]{"entity": "restaurant_food_type", "role": "Fish & Chips"}
+    - [fish]{"entity": "restaurant_food_type", "role": "Fish & Chips"}
+    - [chips]{"entity": "restaurant_food_type", "role": "Fish & Chips"}
+    - [hot dogs]{"entity": "restaurant_food_type", "role": "Hot Dogs"}
+    - [hot pot]{"entity": "restaurant_food_type", "role": "Hot Pot"}
+    - [ramen]{"entity": "restaurant_food_type", "role": "Ramen"}
+    - [kebab]{"entity": "restaurant_food_type", "role": "Kebab"}
+    - [tacos]{"entity": "restaurant_food_type", "role": "Tacos"}
+    - [noodles]{"entity": "restaurant_food_type", "role": "Noodles"}
+    - [pizza]{"entity": "restaurant_food_type", "role": "Pizza"}
+    - [salad]{"entity": "restaurant_food_type", "role": "Salad"}
+    - [sandwiches]{"entity": "restaurant_food_type", "role": "Sandwiches"}
+    - [seafood]{"entity": "restaurant_food_type", "role": "Seafood"}
+    - [soup]{"entity": "restaurant_food_type", "role": "Soup"}
+    - [tapas/small plates]{"entity": "restaurant_food_type", "role": "Tapas/Small Plates"}
+    - [tapas]{"entity": "restaurant_food_type", "role": "Tapas/Small Plates"}
+    - [small plates]{"entity": "restaurant_food_type", "role": "Tapas/Small Plates"}
+    - [waffles]{"entity": "restaurant_food_type", "role": "Waffles"}
+    - [wraps]{"entity": "restaurant_food_type", "role": "Wraps"}
+    - [bagels]{"entity": "restaurant_food_type", "role": "Bagels"}
+    - [bubble tea]{"entity": "restaurant_food_type", "role": "Bubble Tea"}
+    - [coffee & tea]{"entity": "restaurant_food_type", "role": "Coffee & Tea"}
+    - [coffee]{"entity": "restaurant_food_type", "role": "Coffee & Tea"}
+    - [tea]{"entity": "restaurant_food_type", "role": "Coffee & Tea"}
+    - [cupcakes]{"entity": "restaurant_food_type", "role": "Cupcakes"}
+    - [desserts]{"entity": "restaurant_food_type", "role": "Desserts"}
+    - [donuts]{"entity": "restaurant_food_type", "role": "Donuts"}
+    - [gelato]{"entity": "restaurant_food_type", "role": "Gelato"}
+    - [ice cream & frozen yogurt]{"entity": "restaurant_food_type", "role": "Ice Cream & Frozen Yogurt"}
+    - [ice cream]{"entity": "restaurant_food_type", "role": "Ice Cream & Frozen Yogurt"}
+    - [frozen yogurt]{"entity": "restaurant_food_type", "role": "Ice Cream & Frozen Yogurt"}
+    - [poke]{"entity": "restaurant_food_type", "role": "Poke"}
+    - [pretzels]{"entity": "restaurant_food_type", "role": "Pretzels"}
+    - [shaved ice]{"entity": "restaurant_food_type", "role": "Shaved Ice"}
+
+# Negation examples
+- intent: give_preferences
+  examples: |
+    - [not]{"entity": "restaurant_food_type", "role": "NOT"} [burgers]{"entity": "restaurant_food_type", "role": "Burgers"}
+    - [something other than]{"entity": "restaurant_food_type", "role": "NOT"} [burgers]{"entity": "restaurant_food_type", "role": "Burgers"}
+    - I'm looking for [anything but]{"entity": "restaurant_food_type", "role": "NOT"} [burgers]{"entity": "restaurant_food_type", "role": "Burgers"}
+
+# AND/OR examples
+- intent: give_preferences
+  examples: |
+    - [burgers]{"entity": "restaurant_food_type", "role": "Burgers"} [and]("entity": "restaurant_food_type", "role": "AND"} [cheesesteaks]{"entity": "restaurant_food_type", "role": "Cheesesteaks"}
+    - I want [burgers]{"entity": "restaurant_food_type", "role": "Burgers"} [and]("entity": "restaurant_food_type", "role": "AND"} [cheesesteaks]{"entity": "restaurant_food_type", "role": "Cheesesteaks"}
+    - [tacos]{"entity": "restaurant_food_type", "role": "Tacos"} [or]("entity": "restaurant_food_type", "role": "OR"} [tapas]{"entity": "restaurant_food_type", "role": "Tapas/Small Plates"}
+    - [noodles]{"entity": "restaurant_food_type", "role": "Noodles"}, [tacos]{"entity": "restaurant_food_type", "role": "Tacos"}, [or]("entity": "restaurant_food_type", "role": "OR"} [tapas]{"entity": "restaurant_food_type", "role": "Tapas/Small Plates"}

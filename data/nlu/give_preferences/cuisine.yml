@@ -1,0 +1,249 @@
+version: "2.0"
+
+nlu:
+
+# Generated identity cuisine examples (for all Yelp cuisine categories) from data_creation_tools.py
+- intent: give_preferences
+  examples: |
+    - [Afghan]{"entity": "cuisine", "role": "Afghan"}
+    - [African]{"entity": "cuisine", "role": "African"}
+    - [Senegalese]{"entity": "cuisine", "role": "Senegalese"}
+    - [South African]{"entity": "cuisine", "role": "South African"}
+    - [New American]{"entity": "cuisine", "role": "American (New)"}
+    - [Traditional American]{"entity": "cuisine", "role": "American (Traditional)"}
+    - [Arabian]{"entity": "cuisine", "role": "Arabian"}
+    - [Argentine]{"entity": "cuisine", "role": "Argentine"}
+    - [Armenian]{"entity": "cuisine", "role": "Armenian"}
+    - [Asian Fusion]{"entity": "cuisine", "role": "Asian Fusion"}
+    - [Australian]{"entity": "cuisine", "role": "Australian"}
+    - [Austrian]{"entity": "cuisine", "role": "Austrian"}
+    - [Bangladeshi]{"entity": "cuisine", "role": "Bangladeshi"}
+    - [Basque]{"entity": "cuisine", "role": "Basque"}
+    - [Belgian]{"entity": "cuisine", "role": "Belgian"}
+    - [Brazilian]{"entity": "cuisine", "role": "Brazilian"}
+    - [British]{"entity": "cuisine", "role": "British"}
+    - [Bulgarian]{"entity": "cuisine", "role": "Bulgarian"}
+    - [Burmese]{"entity": "cuisine", "role": "Burmese"}
+    - [Cajun/Creole]{"entity": "cuisine", "role": "Cajun/Creole"}
+    - [Cajun]{"entity": "cuisine", "role": "Cajun/Creole"}
+    - [Creole]{"entity": "cuisine", "role": "Cajun/Creole"}
+    - [Cambodian]{"entity": "cuisine", "role": "Cambodian"}
+    - [Caribbean]{"entity": "cuisine", "role": "Caribbean"}
+    - [Dominican]{"entity": "cuisine", "role": "Dominican"}
+    - [Haitian]{"entity": "cuisine", "role": "Haitian"}
+    - [Puerto Rican]{"entity": "cuisine", "role": "Puerto Rican"}
+    - [Trinidadian]{"entity": "cuisine", "role": "Trinidadian"}
+    - [Catalan]{"entity": "cuisine", "role": "Catalan"}
+    - [Chinese]{"entity": "cuisine", "role": "Chinese"}
+    - [Cantonese]{"entity": "cuisine", "role": "Cantonese"}
+    - [Hainan]{"entity": "cuisine", "role": "Hainan"}
+    - [Shanghainese]{"entity": "cuisine", "role": "Shanghainese"}
+    - [Szechuan]{"entity": "cuisine", "role": "Szechuan"}
+    - [Cuban]{"entity": "cuisine", "role": "Cuban"}
+    - [Czech]{"entity": "cuisine", "role": "Czech"}
+    - [Eritrean]{"entity": "cuisine", "role": "Eritrean"}
+    - [Ethiopian]{"entity": "cuisine", "role": "Ethiopian"}
+    - [Filipino]{"entity": "cuisine", "role": "Filipino"}
+    - [French]{"entity": "cuisine", "role": "French"}
+    - [Mauritius]{"entity": "cuisine", "role": "Mauritius"}
+    - [Georgian]{"entity": "cuisine", "role": "Georgian"}
+    - [German]{"entity": "cuisine", "role": "German"}
+    - [Greek]{"entity": "cuisine", "role": "Greek"}
+    - [Guamanian]{"entity": "cuisine", "role": "Guamanian"}
+    - [Hawaiian]{"entity": "cuisine", "role": "Hawaiian"}
+    - [Himalayan/Nepalese]{"entity": "cuisine", "role": "Himalayan/Nepalese"}
+    - [Himalayan]{"entity": "cuisine", "role": "Himalayan/Nepalese"}
+    - [Nepalese]{"entity": "cuisine", "role": "Himalayan/Nepalese"}
+    - [Honduran]{"entity": "cuisine", "role": "Honduran"}
+    - [Hong Kong Style Cafe]{"entity": "cuisine", "role": "Hong Kong Style Cafe"}
+    - [Hungarian]{"entity": "cuisine", "role": "Hungarian"}
+    - [Iberian]{"entity": "cuisine", "role": "Iberian"}
+    - [Indian]{"entity": "cuisine", "role": "Indian"}
+    - [Indonesian]{"entity": "cuisine", "role": "Indonesian"}
+    - [Irish]{"entity": "cuisine", "role": "Irish"}
+    - [Italian]{"entity": "cuisine", "role": "Italian"}
+    - [Calabrian]{"entity": "cuisine", "role": "Calabrian"}
+    - [Sardinian]{"entity": "cuisine", "role": "Sardinian"}
+    - [Sicilian]{"entity": "cuisine", "role": "Sicilian"}
+    - [Tuscan]{"entity": "cuisine", "role": "Tuscan"}
+    - [Japanese]{"entity": "cuisine", "role": "Japanese"}
+    - [Izakaya]{"entity": "cuisine", "role": "Izakaya"}
+    - [Teppanyaki]{"entity": "cuisine", "role": "Teppanyaki"}
+    - [Korean]{"entity": "cuisine", "role": "Korean"}
+    - [Laotian]{"entity": "cuisine", "role": "Laotian"}
+    - [Latin American]{"entity": "cuisine", "role": "Latin American"}
+    - [Colombian]{"entity": "cuisine", "role": "Colombian"}
+    - [Salvadoran]{"entity": "cuisine", "role": "Salvadoran"}
+    - [Venezuelan]{"entity": "cuisine", "role": "Venezuelan"}
+    - [Malaysian]{"entity": "cuisine", "role": "Malaysian"}
+    - [Mediterranean]{"entity": "cuisine", "role": "Mediterranean"}
+    - [Mexican]{"entity": "cuisine", "role": "Mexican"}
+    - [Middle Eastern]{"entity": "cuisine", "role": "Middle Eastern"}
+    - [Egyptian]{"entity": "cuisine", "role": "Egyptian"}
+    - [Lebanese]{"entity": "cuisine", "role": "Lebanese"}
+    - [Modern European]{"entity": "cuisine", "role": "Modern European"}
+    - [Mongolian]{"entity": "cuisine", "role": "Mongolian"}
+    - [Moroccan]{"entity": "cuisine", "role": "Moroccan"}
+    - [New Mexican Cuisine]{"entity": "cuisine", "role": "New Mexican Cuisine"}
+    - [Nicaraguan]{"entity": "cuisine", "role": "Nicaraguan"}
+    - [Pakistani]{"entity": "cuisine", "role": "Pakistani"}
+    - [Pan Asia]{"entity": "cuisine", "role": "Pan Asia"}
+    - [Persian/Iranian]{"entity": "cuisine", "role": "Persian/Iranian"}
+    - [Persian]{"entity": "cuisine", "role": "Persian/Iranian"}
+    - [Iranian]{"entity": "cuisine", "role": "Persian/Iranian"}
+    - [Peruvian]{"entity": "cuisine", "role": "Peruvian"}
+    - [Polish]{"entity": "cuisine", "role": "Polish"}
+    - [Polynesian]{"entity": "cuisine", "role": "Polynesian"}
+    - [Portuguese]{"entity": "cuisine", "role": "Portuguese"}
+    - [Poutineries]{"entity": "cuisine", "role": "Poutineries"}
+    - [Russian]{"entity": "cuisine", "role": "Russian"}
+    - [Scandinavian]{"entity": "cuisine", "role": "Scandinavian"}
+    - [Scottish]{"entity": "cuisine", "role": "Scottish"}
+    - [Singaporean]{"entity": "cuisine", "role": "Singaporean"}
+    - [Slovakian]{"entity": "cuisine", "role": "Slovakian"}
+    - [Somali]{"entity": "cuisine", "role": "Somali"}
+    - [Soul Food]{"entity": "cuisine", "role": "Soul Food"}
+    - [Southern]{"entity": "cuisine", "role": "Southern"}
+    - [Spanish]{"entity": "cuisine", "role": "Spanish"}
+    - [Sri Lankan]{"entity": "cuisine", "role": "Sri Lankan"}
+    - [Syrian]{"entity": "cuisine", "role": "Syrian"}
+    - [Taiwanese]{"entity": "cuisine", "role": "Taiwanese"}
+    - [Tex-Mex]{"entity": "cuisine", "role": "Tex-Mex"}
+    - [Thai]{"entity": "cuisine", "role": "Thai"}
+    - [Turkish]{"entity": "cuisine", "role": "Turkish"}
+    - [Ukrainian]{"entity": "cuisine", "role": "Ukrainian"}
+    - [Uzbek]{"entity": "cuisine", "role": "Uzbek"}
+    - [Vietnamese]{"entity": "cuisine", "role": "Vietnamese"}
+
+# Generated *lowercase* cuisine examples (for all Yelp cuisine categories) from data_creation_tools.py
+- intent: give_preferences
+  examples: |
+    - [afghan]{"entity": "cuisine", "role": "Afghan"}
+    - [african]{"entity": "cuisine", "role": "African"}
+    - [senegalese]{"entity": "cuisine", "role": "Senegalese"}
+    - [south african]{"entity": "cuisine", "role": "South African"}
+    - [new american]{"entity": "cuisine", "role": "American (New)"}
+    - [traditional american]{"entity": "cuisine", "role": "American (Traditional)"}
+    - [arabian]{"entity": "cuisine", "role": "Arabian"}
+    - [argentine]{"entity": "cuisine", "role": "Argentine"}
+    - [armenian]{"entity": "cuisine", "role": "Armenian"}
+    - [asian fusion]{"entity": "cuisine", "role": "Asian Fusion"}
+    - [australian]{"entity": "cuisine", "role": "Australian"}
+    - [austrian]{"entity": "cuisine", "role": "Austrian"}
+    - [bangladeshi]{"entity": "cuisine", "role": "Bangladeshi"}
+    - [basque]{"entity": "cuisine", "role": "Basque"}
+    - [belgian]{"entity": "cuisine", "role": "Belgian"}
+    - [brazilian]{"entity": "cuisine", "role": "Brazilian"}
+    - [british]{"entity": "cuisine", "role": "British"}
+    - [bulgarian]{"entity": "cuisine", "role": "Bulgarian"}
+    - [burmese]{"entity": "cuisine", "role": "Burmese"}
+    - [cajun/creole]{"entity": "cuisine", "role": "Cajun/Creole"}
+    - [cajun]{"entity": "cuisine", "role": "Cajun/Creole"}
+    - [creole]{"entity": "cuisine", "role": "Cajun/Creole"}
+    - [cambodian]{"entity": "cuisine", "role": "Cambodian"}
+    - [caribbean]{"entity": "cuisine", "role": "Caribbean"}
+    - [dominican]{"entity": "cuisine", "role": "Dominican"}
+    - [haitian]{"entity": "cuisine", "role": "Haitian"}
+    - [puerto rican]{"entity": "cuisine", "role": "Puerto Rican"}
+    - [trinidadian]{"entity": "cuisine", "role": "Trinidadian"}
+    - [catalan]{"entity": "cuisine", "role": "Catalan"}
+    - [chinese]{"entity": "cuisine", "role": "Chinese"}
+    - [cantonese]{"entity": "cuisine", "role": "Cantonese"}
+    - [hainan]{"entity": "cuisine", "role": "Hainan"}
+    - [shanghainese]{"entity": "cuisine", "role": "Shanghainese"}
+    - [szechuan]{"entity": "cuisine", "role": "Szechuan"}
+    - [cuban]{"entity": "cuisine", "role": "Cuban"}
+    - [czech]{"entity": "cuisine", "role": "Czech"}
+    - [eritrean]{"entity": "cuisine", "role": "Eritrean"}
+    - [ethiopian]{"entity": "cuisine", "role": "Ethiopian"}
+    - [filipino]{"entity": "cuisine", "role": "Filipino"}
+    - [french]{"entity": "cuisine", "role": "French"}
+    - [mauritius]{"entity": "cuisine", "role": "Mauritius"}
+    - [georgian]{"entity": "cuisine", "role": "Georgian"}
+    - [german]{"entity": "cuisine", "role": "German"}
+    - [greek]{"entity": "cuisine", "role": "Greek"}
+    - [guamanian]{"entity": "cuisine", "role": "Guamanian"}
+    - [hawaiian]{"entity": "cuisine", "role": "Hawaiian"}
+    - [himalayan/nepalese]{"entity": "cuisine", "role": "Himalayan/Nepalese"}
+    - [himalayan]{"entity": "cuisine", "role": "Himalayan/Nepalese"}
+    - [nepalese]{"entity": "cuisine", "role": "Himalayan/Nepalese"}
+    - [honduran]{"entity": "cuisine", "role": "Honduran"}
+    - [hong kong style cafe]{"entity": "cuisine", "role": "Hong Kong Style Cafe"}
+    - [hungarian]{"entity": "cuisine", "role": "Hungarian"}
+    - [iberian]{"entity": "cuisine", "role": "Iberian"}
+    - [indian]{"entity": "cuisine", "role": "Indian"}
+    - [indonesian]{"entity": "cuisine", "role": "Indonesian"}
+    - [irish]{"entity": "cuisine", "role": "Irish"}
+    - [italian]{"entity": "cuisine", "role": "Italian"}
+    - [calabrian]{"entity": "cuisine", "role": "Calabrian"}
+    - [sardinian]{"entity": "cuisine", "role": "Sardinian"}
+    - [sicilian]{"entity": "cuisine", "role": "Sicilian"}
+    - [tuscan]{"entity": "cuisine", "role": "Tuscan"}
+    - [japanese]{"entity": "cuisine", "role": "Japanese"}
+    - [izakaya]{"entity": "cuisine", "role": "Izakaya"}
+    - [teppanyaki]{"entity": "cuisine", "role": "Teppanyaki"}
+    - [korean]{"entity": "cuisine", "role": "Korean"}
+    - [laotian]{"entity": "cuisine", "role": "Laotian"}
+    - [latin american]{"entity": "cuisine", "role": "Latin American"}
+    - [colombian]{"entity": "cuisine", "role": "Colombian"}
+    - [salvadoran]{"entity": "cuisine", "role": "Salvadoran"}
+    - [venezuelan]{"entity": "cuisine", "role": "Venezuelan"}
+    - [malaysian]{"entity": "cuisine", "role": "Malaysian"}
+    - [mediterranean]{"entity": "cuisine", "role": "Mediterranean"}
+    - [mexican]{"entity": "cuisine", "role": "Mexican"}
+    - [middle eastern]{"entity": "cuisine", "role": "Middle Eastern"}
+    - [egyptian]{"entity": "cuisine", "role": "Egyptian"}
+    - [lebanese]{"entity": "cuisine", "role": "Lebanese"}
+    - [modern european]{"entity": "cuisine", "role": "Modern European"}
+    - [mongolian]{"entity": "cuisine", "role": "Mongolian"}
+    - [moroccan]{"entity": "cuisine", "role": "Moroccan"}
+    - [new mexican cuisine]{"entity": "cuisine", "role": "New Mexican Cuisine"}
+    - [nicaraguan]{"entity": "cuisine", "role": "Nicaraguan"}
+    - [pakistani]{"entity": "cuisine", "role": "Pakistani"}
+    - [pan asia]{"entity": "cuisine", "role": "Pan Asia"}
+    - [persian/iranian]{"entity": "cuisine", "role": "Persian/Iranian"}
+    - [persian]{"entity": "cuisine", "role": "Persian/Iranian"}
+    - [iranian]{"entity": "cuisine", "role": "Persian/Iranian"}
+    - [peruvian]{"entity": "cuisine", "role": "Peruvian"}
+    - [polish]{"entity": "cuisine", "role": "Polish"}
+    - [polynesian]{"entity": "cuisine", "role": "Polynesian"}
+    - [portuguese]{"entity": "cuisine", "role": "Portuguese"}
+    - [poutineries]{"entity": "cuisine", "role": "Poutineries"}
+    - [russian]{"entity": "cuisine", "role": "Russian"}
+    - [scandinavian]{"entity": "cuisine", "role": "Scandinavian"}
+    - [scottish]{"entity": "cuisine", "role": "Scottish"}
+    - [singaporean]{"entity": "cuisine", "role": "Singaporean"}
+    - [slovakian]{"entity": "cuisine", "role": "Slovakian"}
+    - [somali]{"entity": "cuisine", "role": "Somali"}
+    - [soul food]{"entity": "cuisine", "role": "Soul Food"}
+    - [southern]{"entity": "cuisine", "role": "Southern"}
+    - [spanish]{"entity": "cuisine", "role": "Spanish"}
+    - [sri lankan]{"entity": "cuisine", "role": "Sri Lankan"}
+    - [syrian]{"entity": "cuisine", "role": "Syrian"}
+    - [taiwanese]{"entity": "cuisine", "role": "Taiwanese"}
+    - [tex-mex]{"entity": "cuisine", "role": "Tex-Mex"}
+    - [thai]{"entity": "cuisine", "role": "Thai"}
+    - [turkish]{"entity": "cuisine", "role": "Turkish"}
+    - [ukrainian]{"entity": "cuisine", "role": "Ukrainian"}
+    - [uzbek]{"entity": "cuisine", "role": "Uzbek"}
+    - [vietnamese]{"entity": "cuisine", "role": "Vietnamese"}
+
+# Weird cases (TODO: remove these and fix them properly)
+- intent: give_preferences
+  examples: |
+    - [American]{"entity": "cuisine", "role": "American (Traditional)"}
+
+# Negation examples
+- intent: give_preferences
+  examples: |
+    - [not]{"entity": "cuisine", "role": "NOT"} [Chinese]{"entity": "cuisine", "role": "Chinese"}
+    - [something other than]{"entity": "cuisine", "role": "NOT"} [Mexican]{"entity": "cuisine", "role": "Mexican"}
+    - I'm looking for [anything but]{"entity": "cuisine", "role": "NOT"} [Italian]{"entity": "cuisine", "role": "Italian"}
+
+# AND/OR examples
+- intent: give_preferences
+  examples: |
+    - [Chinese]{"entity": "cuisine", "role": "Chinese"} [and]("entity": "cuisine", "role": "AND"} [Szechuan]{"entity": "cuisine", "role": "Szechuan"}
+    - [Chinese]{"entity": "cuisine", "role": "Chinese"} [and]("entity": "cuisine", "role": "AND"} [Korean]{"entity": "cuisine", "role": "Korean"}
+    - [Chinese]{"entity": "cuisine", "role": "Chinese"} [or]("entity": "cuisine", "role": "OR"} [Korean]{"entity": "cuisine", "role": "Korean"}
+    - [Mexican]{"entity": "cuisine", "role": "Mexican"}, [Italian]{"entity": "cuisine", "role": "Italian"}, [or]("entity": "cuisine", "role": "OR"} [Indian]{"entity": "cuisine", "role": "Indian"}

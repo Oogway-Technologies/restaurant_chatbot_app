@@ -1,0 +1,65 @@
+version: "2.0"
+
+nlu:
+
+# Price examples
+- intent: give_preferences
+  examples: |
+    - [cheap]{"entity": "price", "role": "1"}
+    - [very cheap]{"entity": "price", "role": "1"}
+    - [budget]{"entity": "price", "role": "1"}
+    - [inexpensive]{"entity": "price", "role": "1"}
+    - [low cost]{"entity": "price", "role": "1"}
+    - [low priced]{"entity": "price", "role": "1"}
+    - [low-cost]{"entity": "price", "role": "1"}
+    - [affordable]{"entity": "price", "role": "1"}
+    - [reasonable]{"entity": "price", "role": "2"}
+    - [moderate price]{"entity": "price", "role": "2"}
+    - [moderately priced]{"entity": "price", "role": "2"}
+    - [reasonably priced]{"entity": "price", "role": "2"}
+    - [not too bad]{"entity": "price", "role": "2"}
+    - [not too expensive]{"entity": "price", "role": "2"}
+    - [not too pricey]{"entity": "price", "role": "2"}
+    - [reasonable deal]{"entity": "price", "role": "2"}
+    - [reasonable price]{"entity": "price", "role": "2"}
+    - [medium price]{"entity": "price", "role": "2"}
+    - [high price]{"entity": "price", "role": "3"}
+    - [costly]{"entity": "price", "role": "3"}
+    - [expensive]{"entity": "price", "role": "3"}
+    - [overpriced]{"entity": "price", "role": "3"}
+    - [extravagant]{"entity": "price", "role": "3"}
+    - [highly priced]{"entity": "price", "role": "3"}
+    - [pricey]{"entity": "price", "role": "3"}
+    - [wallet-draining]{"entity": "price", "role": "3"}
+    - [high-priced]{"entity": "price", "role": "3"}
+    - [high-end]{"entity": "price", "role": "3"}
+    - [steep]{"entity": "price", "role": "3"}
+
+# Dollar sign examples
+- intent: give_preferences
+  examples: |
+    - [$]{"entity": "price", "role": "1"}
+    - [$$]{"entity": "price", "role": "2"}
+    - [$$$]{"entity": "price", "role": "3"}
+    - [$$$$]{"entity": "price", "role": "4"}
+
+# Number examples
+- intent: give_preferences
+  examples: |
+    - [price 1]{"entity": "price", "role": "1"}
+    - [price 2]{"entity": "price", "role": "2"}
+    - [price 3]{"entity": "price", "role": "3"}
+    - [price 4]{"entity": "price", "role": "4"}
+
+# AND/OR examples
+- intent: give_preferences
+  examples: |
+    - [cheap]{"entity": "price", "role": "1"} [or]{"entity": "price", "role": "OR"} [moderately priced]{"entity": "price", "role": "2"}
+    - [reasonably priced]{"entity": "price", "role": "2"} [or]{"entity": "price", "role": "OR"} [low cost]{"entity": "price", "role": "1"}
+    - [medium]{"entity": "price", "role": "2"} [or]{"entity": "price", "role": "OR"} [high price]{"entity": "price", "role": "3"}
+
+# # Negation examples
+# - intent: give_preferences
+#   examples: |
+#     - [not]{"entity": "price", "role": "NOT"} [cheap]{"entity": "price", "role": "1"}
+#     - something that [isn't]{"entity": "price", "role": "NOT"} [pricey]{"entity": "price", "role": "3"}

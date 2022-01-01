@@ -1,0 +1,37 @@
+version: "2.0"
+
+nlu:
+
+# Possible Yelp roles for ambience with an exact match to the entity
+- intent: give_preferences
+  examples: |
+    - [casual]{"entity": "ambience", "role": "casual"}
+    - [classy]{"entity": "ambience", "role": "classy"}
+    - [divey]{"entity": "ambience", "role": "divey"}
+    - [hipster]{"entity": "ambience", "role": "hipster"}
+    - [intimate]{"entity": "ambience", "role": "intimate"}
+    - [romantic]{"entity": "ambience", "role": "romantic"}
+    - [touristy]{"entity": "ambience", "role": "touristy"}
+    - [trendy]{"entity": "ambience", "role": "trendy"}
+    - [upscale]{"entity": "ambience", "role": "upscale"}
+
+# Synonyms
+- intent: give_preferences
+  examples: |
+    - [informal]{"entity": "ambience", "role": "casual"}
+    - [high-class]{"entity": "ambience", "role": "classy"}
+    - [shabby]{"entity": "ambience", "role": "divey"}
+    - [Hipster]{"entity": "ambience", "role": "hipster"}
+    - [private]{"entity": "ambience", "role": "intimate"}
+    - [Romantic]{"entity": "ambience", "role": "romantic"}
+    - [tourist-orientated]{"entity": "ambience", "role": "touristy"}
+    - [fashionable]{"entity": "ambience", "role": "trendy"}
+    - [luxurious]{"entity": "ambience", "role": "upscale"}
+
+# AND/OR examples
+- intent: give_preferences
+  examples: |
+    - [classy]{"entity": "ambience", "role": "classy"} [and]{"entity": "ambience", "role": "AND"} [romantic]{"entity": "ambience", "role": "romantic"}
+    - restaurant with a [classy]{"entity": "ambience", "role": "classy"} [and]{"entity": "ambience", "role": "AND"} [romantic]{"entity": "ambience", "role": "romantic"} atmosphere
+    - [classy]{"entity": "ambience", "role": "classy"} [or]{"entity": "ambience", "role": "OR"} [romantic]{"entity": "ambience", "role": "romantic"}
+    - restaurant with a [classy]{"entity": "ambience", "role": "classy"} [or]{"entity": "ambience", "role": "OR"} [romantic]{"entity": "ambience", "role": "romantic"} atmosphere

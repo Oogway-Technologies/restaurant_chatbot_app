@@ -1,0 +1,43 @@
+version: "2.0"
+
+nlu:
+
+# Same example repeated for each filter
+- intent: remove_preference
+  examples: |
+    - remove the [ambience]{"entity": "filter_key", "role": "ambience"} filter
+    - remove the [amenities]{"entity": "filter_key", "role": "amenities"} filter
+    - remove the [attire]{"entity": "filter_key", "role": "attire"} filter
+    - remove the [business owner]{"entity": "filter_key", "role": "business_owner"} filter
+    - remove the [business parking]{"entity": "filter_key", "role": "business_parking"} filter
+    - remove the [cuisine]{"entity": "filter_key", "role": "cuisine"} filter
+    - remove the [dietary restrictions]{"entity": "filter_key", "role": "dietary_restrictions"} filter
+    - remove the [music]{"entity": "filter_key", "role": "music"} filter
+    - remove the [noise level]{"entity": "filter_key", "role": "noise_level"} filter
+    - remove the [outdoor seating]{"entity": "filter_key", "role": "outdoor_seating"} filter
+    - remove the [payment method]{"entity": "filter_key", "role": "payment_method"} filter
+    - remove the [price]{"entity": "filter_key", "role": "price"} filter
+    - remove the [restaurant food type]{"entity": "filter_key", "role": "restaurant_food_type"} filter
+    - remove the [restaurant type]{"entity": "filter_key", "role": "restaurant_type"} filter
+    - remove the [smoking]{"entity": "filter_key", "role": "smoking"} filter
+    - remove the [wifi]{"entity": "filter_key", "role": "wifi"} filter
+    - remove the [city]{"entity": "filter_key", "role": "city"} filter
+    - remove the [zip code]{"entity": "filter_key", "role": "zip_code"} filter
+
+# Other examples
+- intent: remove_preference
+  examples: |
+    - actually undo the [cuisine]{"entity": "filter_key", "role": "cuisine"} filter
+    - please remove the [cuisine]{"entity": "filter_key", "role": "cuisine"} filter
+    - I changed my mind about [price]{"entity": "filter_key", "role": "price"}. Undo that filter
+
+# Remove more than one at a time
+- intent: remove_preference
+  examples: |
+    - remove the [cuisine]{"entity": "filter_key", "role": "cuisine"}, [music]{"entity": "filter_key", "role": "music"}, and [smoking]{"entity": "filter_key", "role": "smoking"} filters
+    - undo the [amenities]{"entity": "filter_key", "role": "amenities"} and [smoking]{"entity": "filter_key", "role": "smoking"} filters
+    - undo the [attire]{"entity": "filter_key", "role": "attire"}, [business owner]{"entity": "filter_key", "role": "business_owner"}, and [business parking]{"entity": "filter_key", "role": "business_parking"} filters
+    - maybe remove the [dietary restrictions]{"entity": "filter_key", "role": "dietary_restrictions"} and [noise level]{"entity": "filter_key", "role": "noise_level"} and [ambience]{"entity": "filter_key", "role": "ambience"} filters
+    - Actually, I don't care about [price]{"entity": "filter_key", "role": "price"}, [outdoor seating]{"entity": "filter_key", "role": "outdoor_seating"}, or [payment method]{"entity": "filter_key", "role": "payment_method"}. Remove those
+    - remove the [restaurant food type]{"entity": "filter_key", "role": "restaurant_food_type"}, [restaurant type]{"entity": "filter_key", "role": "restaurant_type"} and [wifi]{"entity": "filter_key", "role": "wifi"} filters
+    - remove the [city]{"entity": "filter_key", "role": "city"} and [zipcode]{"entity": "filter_key", "role": "zip_code"}
